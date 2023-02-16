@@ -1,0 +1,6108 @@
+LINUX ADMINESTRATION 13BATCH-NOTES
+----------------------------------
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF --->> This key is 100% worked for me up to VM 16.1.1 build-17801498
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+
+------------------------------------------------------------------------------------------------
+Updated on Nov 4, 2021: 
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF --->> This key is 100% worked for me in VM 16.2.0 build-18760230
+
+[10:41 AM, 4/12/2022] Sai(Linux): AWS
+-----
+aws.amazon.com
+
+amazon
+google
+microsoft
+informatica
+Cloudera
+hp
+IBM
+lenovo
+.
+.
+.
+
+Command prompt login:
+---------------------
+Create an AWS accout
+Create an EC2 Instance
+Right click on the instance and click on Connect option
+there you will get the ssh command to connect to the system
+ssh -i "Batch13.pem" ec2-user@ec2-15-206-194-145.ap-south-1.compute.amazonaws.com
+make sure you are in the path where Batch13.pem is located
+
+Command to switch to the Root user:
+ sudo su -
+
+Putty SSH tool:
+------------------
+1. download from https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.76-installer.msi
+
+2. Install it ==> Next ==> Next ==>Install
+
+3. Open putty from start menu
+
+Follow the steps here:
+	https://asf.alaska.edu/how-to/data-recipes/connect-…
+[10:52 AM, 4/12/2022] Sai(Linux): Try to login to the VMWARE instance through PUTTY, MOBAXTERM, CMD 
+
+https://     www.google.com/
+
+ssh ==>Secure Shell ===> ssh username@IP/HOST
+								===> ssh -i "pemkeyfile" username@IP/HOST/DNS
+
+SMTP ==> SImple Main Transer Protocol...
+
+to copy files from one system to another system ==> kind of transering the files among systems
+	scp
+	rsync
+
+[10:49 AM, 4/13/2022] Sai(Linux): Windows ==>
+program files, program files(x86), Users, Windows
+
+
+Linux Flavours:
+-----------------
+Redhat, CentOS, Fedora, Ubuntu, Debain, SuSE, Linux mint, Solaris,.....
+
+
+/ is a parent directory
+ inside this parent directory we will have 13 default important directories.
+
+   1. /boot  ==> bootable files 
+			
+	booting: ==> whenever you click power on button, it will take sometime and it will show you login prompt ==>it will take around 30 - 60 seconds
+   
+	 2. /root  ==> root is a administrator user ==> root user home directory
+
+   3. /home  ==> normal users home directories
+		mahesh    ==>/home/mahesh
+		manoj		==> /home/manoj
+		sreekanth ==>/home/sreekanth
+
+   4. /etc
+
+We can see all system configuration files....
+
+	/etc/sysconfig/network-scripts/ifcfg-ens33 ==>IP address information
+	/etc/passwd ==>users information
+.
+.
+.
+
+   5. /var
+
+		Variable Analysis report ==> System logs
+			
+   6. /usr
+		Unix System Resources
+		
+		copy the file
+		renaming the file
+		creating the file
+		create user 
+		what is system date
+		I want to display the calendar
+
+	/usr/bin   ==> Normal user binaries/command/software
+	/usr/sbin  ==> Super(Root) user Binaries
+	/usr/lib   ==> 32 bit libraries
+	/usr/lib64 ==> 64 bit libraries
+
+   7. /sbin(/usr/sbin)
+   8. /bin(/usr/bin)
+   9. /lib, /lib64
+		
+		
+   10. /proc
+
+Processing informatin....
+what is RAM usage   ==> /proc/meminfo
+what is CPU usage		==>/proc/cpuinfo
+what is SWAP usage   ==>/proc/swaps
+
+lscpu, top, free
+
+   11. /dev
+
+Device information...
+	hdd, ssd, paritions, devices(terminals)
+
+   12. /mnt
+
+		==> Guest partition
+
+   13. /tmp
+	Temporary partitions ==> For backup purpose
+		App1(banking ICICI application) ==> App2.1 =>
+
+Sticky bit permission 
+			==> mahesh  ==> App1
+  			==> Manoj   ==> file1
+       ==>root
+
+	 14. /opt  ==> Optional partition ==> third party softwares 
+			informatica softwares
+			big data applications
+			banking application
+			mee seva application
+	 15. /media ==>Guest partition for CD/DVD
+
+
+1. /boot : contains the OS bootable files, these files helps to load your operating system.(eg: kernel files).
+
+
+ clear = to clear the screen (ctl+l)
+
+alt+F2
+
+2. /root : it's a home directory of administrator.who is the administrator in Linux/Unix root user.
+        no other user can enter into root user home directory.
+       
+   window: c:/users/admin
+Desktop,Downloads, Documents.....
+
+  c:/users/narasimha
+Desktop,Downloads,Documents......
+3. /home  :  contains other users home directories. this is the default location for other users.
+
+4. /etc  : it contains configuration files of operating system and third party tools/softwares configuration files.
+5. /var  :  it contains activity report or log(activity report) of system activities.
+   /var/log i deleted everything from /var/log . is operating sytem will come up? yes
+     unfortunatly deleted /boot directory data. is operating system will cme up? no
+6. /usr;  Unix system resources
+      it contains oprerating system binaries(programs) like commands(ls,cd,cp,rm,useradd,userdel)
+
+  ls  command
+  cd  command
+  pwd command
+  rm   command
+                 /usr/bin ( common commands for all users commands)
+                 /usr/sbin (super(root) user commands)
+
+useraddministration commands : sbin
+    useradd,userdel,usermod
+
+software managment:   sbin
+install,uninstall,upgrade
+
+ls,cd,pwd    =  bin
+
+
+
+7.  /bin  : few commands are seperated from /usr/bin to /bin location. these commands will help during OS boot up.
+8.  /sbin : few commands are seperated from /usr/sbin to /sbin directory or location. these commands will help during os boot up.
+9.  /lib  : it contains libraries of operating system. these libraries(programs) are shared between multiple commands or binraries.
+   libraries are important to run your programs or operating system.
+     /boot = important to load operating system
+     /lib  = imp to load operating system
+10. /proc  :  it a temp directory for processor. this directory used by processor(cpu). it stores data of process or task.
+11. /dev  :  It contains logical device names( cd/DVD, hard disk, RAM,).
+12. /mnt   : guest directory . we can store any data here
+13. /tmp  : it contains every user running processes data.
+
+  18  uname
+   19  uname -r
+   20  uname --help
+   21  uname -a
+   22  uname -s
+   23  uname --kernel-name
+   24  uname -n
+   25  uname -r
+   26  uname -v
+   27  arch
+   28  pwd
+   29  ls
+   30  ll
+   31  lscpu
+   32  cal
+   33  cal 01 2022
+   34  cal --help
+   35  cal -m
+   36  clear
+   37  cal
+   38  date
+   39  date --help
+   40  date +%d
+   41  date
+   42  date +%d-%B
+   43  date +%d-%B-%Y
+   44  clear
+   45  ll
+   46  ls
+   47  mkdir testdir
+   48  cd testdir/
+   49  pwd
+   50  mkdir dir1 dir2 dir3 dir4
+   51  ll
+   52  pwd
+   53  mkdir directory{1..10}
+   54  ll
+   55  clear
+   56  touch file1
+   57  ll
+   58  touch f{1..10}
+   59  ll
+   60  touch f{1..10}
+   61 
+   63  clear
+   64  ll
+   65 …
+[10:47 AM, 4/14/2022] Sai(Linux): 49  clear
+   50  whoami
+   51  logname
+   52  su - mahesh
+   53  exit
+   54  cat /etc/passwd
+   55  passwd manoj
+   56  passwd sreekanth
+   57  su - mahesh
+   58  exit
+   59  cat > file1
+   60  cat < file1
+   61  cat file1
+   62  cat >> file1
+   63  cat file1
+   64  cat > file1
+   65  cat file1
+   66  cat > file1
+   67  cat file1
+   68  cat > file1
+   69  cat file1
+   70  ll
+   71  cat > notes
+   72  cat notes
+   73  clear
+   74  cat --help
+   75  cat -n notes
+   76  cat notes
+   77  cat -n notes
+   78  cat -b notes
+   79  history
+
+
+cat > file1
+type text 
+press "ctrl+d" or "ctrl+c" ==> to save the data
+
+how to append the data to the file
+	cat >> filename
+	type text
+	press "ctrlcat+d" or "ctrl+c" ==> to save the data
+
+
+--------------------------------
+> ==>overwrite OR redirect operator
+>> ==> Appending data or adding data / redirect and append the data...
+
+
+
+
+-------------------------------
+            File Management
+=================-------------------------
+
+VI editor  ==> Virtual Interface 
+VIM editor ==> Visual Improved..
+
+
+How to create the file using Vi editor?
+
+vi filename
+press "i" to goto the insert mode and type some text
+sava the data by pressing "esc" and type :wq and press enter...
+	w ==> write
+ 	q ==>quitvi
+3 modes
+1. Insert mode ==> to go to insert mode you need press "i"
+2. Command mode ==> to go to command mode press "esc"
+3. Replace mode ==> to go to replace mode press "R"
+
+x => deleting a character/letter
+dw ==> deleting a word
+dd ==> deleting a line
+10dd => deleting 10 lines
+100dd ==> deleting 100 lines
+
+
+i ==> insert 
+w ==> write
+q ==> quit
+q! ==> quit without changes
+wq! ==> it will quit by writing changes forcefully
+
+:number
+
+:se nu
+
+
+
+------------------------------------------------------
+
+1. Cat (Concatenate)
+2. VI  (Virtual interface)
+3. Touch
+
+windows: Notepad and ms word
+
+  files will be in black colour
+  directories will be in bluevi
+cat 
+      cat > filename
+ctrl + d
+==> to view the file content
+
+cat filename
+==> to view the file content with line numbers
+cat -n filename ==> it will give the line numbers
+cat -b filename ==> it won't give the line number for the empty lines
+
+
+==> how to append content to existing file
+cat >> batch4
+
+the limitation in cat is we can't modify existing data.
+> create and overwrite  if file is not exists then it creates. If file is exists then it overwrites.
+>> append
+------------------------------------------17-04-2022(completed)
+
+mkdir -p work/{F1,F2,F3}/{temp1,temp2}
+
+VI virtual interface
+
+1. Command mode(default mode)
+2. Insert mode
+3. Replacement mode
+
+
+dd : to delete the cursor standing line
+5dd : to delete 5 lines from the cursor standing line
+1000dd
+u  : to undo the latest changes
+yy : to copy the cursor standing line . this is for copy only one line
+5yy: to copy 5 lines from the cursor standing line.
+p  : to past copied data below cursor postion. small p
+shift + p : to past copied data above of cursor postion. capital P.
+cc : to cut the cursor postion line
+10cc : to cut 10 from the cursor position line.
+
+how to switch from command mode to insert mode ==> i
+how to switch back to command mode ==> esc we have presess esc key to come back command mode
+
+:se nu : to set the line numbers for the file content
+:se nonu : to unapear/hide line numbers for the file content.
+gg   : to take cursor to file line of the file.
+Shift + g : to take cursor to last line of the file. shift + g is nothing capital G
+:25 : to take cursor to particular line of file
+:15
+
+i : to switch into the insert mode at the same position of cursor.
+a : switch into the insert mode but next position of cursor standing.
+o : create new below of cursor position line and switch to insert mode.
+shift + O : create new line above of cursor position line and switch into insert mode.
+
+:w : save the changes
+:q : quit from the file without save changes
+:wq : is for save changes and quit from the file.
+$   : to take cursor to end of the line
+0(zero)  : to take cursor to starting of the line
+   
+Shift + i I : Take cursor to starting of the line and switch into insert mode
+shift + a A : Take cursor to end of the line and swith into insert mode
+i
+a
+
+Search options
+/word
+?word
+/narasimha : search string from cursor position to down
+n is for seach string next location or position.
+N is go back to previous search
+
+?narasimha   : search string froom cursor position to up
+n is for go back to previous search place
+N is for search string in the next position
+
+Replace:
+:%s/narasimha/narasimha prasad/g
+:%s/existingword/newword/g
+
+
+x   : is for delete single char from cursor position
+dw  : is for delete one word from the cursor position
+
+r  : is for replace one char from the cursor position.
+Shift + r R  : is for switch from command mode to replacement mode
+esc  is for come back to command mode
+
+< h : is for move cursor to left from cursor standing position.
+> l : is for move cursor to right from cursor standing poistion.
+ k : is for move cursor to up
+ j : is for move cursor to down
+
+Touch:
+
+it is for update curent date and time of existing file
+ touch is for create empty files this is wrong. the actual functionality is change current timestamp to the existing file.
+
+touch file2 file3 file4 file5 file6 file7
+if file is not exist then touch creates empty file. if file is exist then just update curent date & time to file.
+
+
+
+how to create 100 file with same format
+
+touch file{1..100}
+
+
+How to create folder/directory
+mkdir testdir
+mkdir <directory nams
+
+   mkdir b22dir
+   mkdir -p /b22dir1/testbarnch/chennai
+
+
+how to know the presently logged in user?
+whoami
+how to switch from one user to another user?
+  su - narasimha
+switch user
+
+how we can logout from user?
+   logout
+   exit
+   ctrl + d
+
+
+-------------------------
+
+copying the files..
+
+  158  vi visualinterface
+  159  cat visualinterface
+  160  vi visualinterface
+  161  vim /etc/sysconfig/network-scripts/ifcfg-ens33
+  162  vim visualinterface
+  163  clear
+  164  vim visualinterface
+  165  ip a
+  166  clear
+  167  vim visualinterface
+  168  clear
+  169  vi notes
+  170  vim visualinterface
+  171  cat visualinterface
+  172  sed -i "s/cursor/TEXTLKDJFLKDJFKLDJFD/g"
+  173  sed -i "s/cursor/TEXTLKDJFLKDJFKLDJFD/g" visualinterface
+  174  cat visualinterface
+  175  sed -i "s/delete/DELETE/2g" visualinterface
+  176  cat visualinterface
+  177  cat visualinterface | grep DELETE
+  178  sed -i "s/delete/DELETE/3g" visualinterface
+  179  cat visualinterface
+  180  clear
+  181  whoami
+  182  useradd test
+  183  passwd test
+  184  su - test
+  185  clear
+  186  cat > testfile
+  187  cat testfile
+  188  cp testfile testfile123
+  189  cat testfile
+  190  cat testfile123
+  191  mkdir dir1
+  192  ll
+  193  ls -lrtha
+  194  cp testfile dir1/
+  195  \
+  196  tree dir1
+  197  cp testfile test1
+  198  cp testfile test2
+  199  cp testfile test3
+  200  cp testfile test4
+  201  cp test1 test2 test3 test4 test5
+  202  cp test1 test2 test3 test4 dir1/
+  203  tree dir1/
+  204  mkdir dir2
+  205  cp dir1/* dir2
+  206  tree dir2
+  207  tree dir1
+  208  cp test1 test5
+  209  cp test1 test6
+  210  cp test5 test6 test4 dir2
+  211  alias
+  212  ls
+  213  alias WENEEDDIRECTORIES='ls'
+  214  WENEEDDIRECTORIES
+  215  cp test1 test2 test3 test4 test5
+  216  cat test1 test2 test3
+  217  cat test1 test2 test3 > test5
+  218  cat test5
+  219  tree dir1
+  220  tree dir2
+  221  cd dir1
+  222  ll
+  223  mkdir dir5
+  224  cd dir5
+  225  touch file{1..5}
+  226  ll
+  227  wpd
+  228  pwd
+  229  cd ..
+  230  tree
+  231  cd ..
+  232  pwd
+  233  ll
+  234  mkdir dir3
+  235  cp -r dir1/* dir3
+  236  tree dir3
+  237  mkdir dir4
+  238  cp -rv dir1 dir4
+  239  clear
+  240  history
+
+
+
+---------------------------
+
+how to copy file or directory from one directory to another directory?
+cp <source file name> <destination path>
+
+       cp /batch4  /var/
+
+
+-------------------
+. current path
+.. previous path
+../.. back to 2 previous paths
+../../../ back to 3 previous paths
+
+
+cd /p/r/a/s/a/d
+cd ..
+pwd
+/p/r/a/s/a
+
+
+
+     cd -
+is for take cursor to previous or old path
+
+cd
+
+current pwd will change to user home directory. It takes to user home directory.
+
+cd / to take user to / path
+cd /etc to take user to /etc
+but just cd will take user to his home directory.
+cd
+
+what is the root user home directory?
+/root
+
+what is the narasimha user home directory?
+/home/narasimha
+--------------------------------------------------
+Moving/renaming the files 
+
+mv command is used to renaming the files or directories and also we can move the files from one directory to another...
+
+
+You can't force mv to overwrite a directory with a file with the same name. You'll need to remove that file before you use your mv command
+
+257  mv test123 kajsdflajsdfjaldf
+  258  ls -lrtha
+  259  mv --help
+  260  mv -f dir1 vivek
+  261  mv -fv dir1 vivek
+  262  ls -lrtha
+  263  mv -fv dir1 vivekguptha
+  264  ls -lrtha
+  265  mv -fv dir1 vivek
+  266  mv -fv dir3 vivek
+  267  mkdir kiran
+  268  cd kiran/
+  269  ll
+  270  mkdir test
+  271  touch file{1..10}
+  272  touch f{1..10}
+  273  touch sai{1..10}
+  274  ll
+  275  mv sai1 test/
+  276  ll
+  277  mv sai1 sai2 sai3 test
+  278  mv sai10 sai2 sai3 test
+  279  mv sai* test
+  280  ls -l test/
+  281  mv file1 file2 test
+  282  mv file10 file5 file4 test
+  283  ll
+  284  mv file{6..9} test
+  285  ll
+  286  mv f? test
+  287  ll
+  288  mv f* test
+  289  ll
+  290  tree test/
+
+ 294  touch file{1..5}
+  295  mkdir xyz
+  296  ll
+  297  mv file1 file2
+  298  mv test/* xyz
+  299  tree xyz
+  300  tree test
+  301  ll
+  302  cd test/
+  303  ll
+  304  touch file{100..200}
+  305  ll
+  306  cd ..
+  307  ll
+  308  mv test/ xyz
+  309  ll
+  310  cd xyz
+  311  ls
+  312  history
+
+    Move/rename
+      mv filename /etc/
+--------------------------------------------
+    removing files/directories
+     rm <filename>
+     rm -r <directory name>
+  -r recursively
+  -f forcefully delete file or directory without user confirmation
+
+  318  rmdir test
+  319  ll
+  320  rmdir xyz
+  321  rm -rf file1
+  322  ll
+  323  rm -rf file2 file3
+  324  ll
+  325  rm xyz
+  326  rm -rf xyz/
+  327  ll
+  328  rm -rf *
+  329  ll
+  330movm -rf v????
+  331  ll
+
+    ------------------------------------------
+
+
+how to know the operating system version?
+  cat /etc/os-release
+RHEL = redhat enterprise Linux  7.5
+  4,4.1,4.2,
+  major version is 4,5,6,7,8
+  minor versions = 4.1,4.2,4.10; 5.1,5.2,5.3,5.10;  6.1,6.2,6.3,6.10; 7,7.1,7.2,7.3,7.9,7.10; 8
+
+
+how to know the operating system architecture is 64 bit or 32 bit.
+note: till RHEL 6 they used release both 32 and 64 but from RHEL 7 onwards started releasing only 64 bit.
+
+    uname -m
+    arch
+    hostnamectl status
+
+how to print hostname of machine?
+     uname -n
+     hostname
+
+how to change the hostname?
+    hostnamectl set-hostname newnamevi
+
+host to know the IP address of the system?
+ 348  ip a
+  349  ip addr
+  350  ifconfig
+  352  ifconfig -a
+  353  ifconfig ens33
+  354  hostname --help
+  355  hostname -I
+  356  hostname --all-ip-addresses
+
+system configuration:
+RAM
+processors
+HDD
+ethernet card(network)
+   
+ how to get installed memory(RAM) of server?
+free -m or free -g
+cat /proc/meminfo
+
+m : size is going show in mega bytes
+g : size is going show in giga bytes
+k : kilo
+
+  1024 kb is 1 MB
+  1024 MB is 1 GB
+
+
+free -m
+1023 0
+
+
+
+How to get the processor(CPU) information? how many processors and capacity of processor?
+   lscpu
+list cpu info
+   cat /proc/cpuinfo
+
+How to get disks information?
+  lsblk
+  fdisk -l
+  lsscsi
+
+HDD, SSD, SCSI
+
+how to get network cards information?
+
+   ip a
+   ifconfig -a
+
+
+how to know platform?
+  dmidecode -s system-product-name
+  hostnamectl status
+how to know the serial number of machine?
+   dmidecode -s system-serial-number
+   
+  how to know the date and time of system?
+date
+
+
+power off commands: h means halt
+  shutdown -h now
+  shutdown -h 5
+  shutdown -h 5 " message"
+  shutdown -h 5 "we are going to power off this server as per maintenance . Please close your things before shutdown"
+  poweroff
+  halt
+  init 0
+
+reboot the server: r means reboot
+  shutdown -r now
+  shutdown -r 5
+  shutdown -r 5 " message"
+  shutdown -r 5 " we are going to rebooting this server as per maintenance . Please close your things before shutdown"
+  reboot
+  init 6
+
+---------------------
+
+100 users ==> user1, user2 user3 user4 
+root ==> shutdown -r 5 "we are going ..................."
+
+head and tail commands
+head command is for print starting 10 lines of the file
+head <filename>
+head -20 <filename>
+head -50 <filename>
+
+tail command is for print last 10 lines of the file
+tail <filename>
+tail -5 <filename>
+tail -100 <filename>
+
+
+; && | 
+
+
+; ==>we can run multiple commands at a time using ; symbol. it will ignore incorrect command and it moves forward 
+&& ==> we can run multiple command. But if the previous command is successful then only it moves forward to the next command otherwise, it throws an error.
+
+ 406  date;uname -r;hostname;cal
+  407  date && uname -r && hossstname && cal
+  408  date ; uname -r ; hossstname ; cal
+  409  rm -rf *
+  410  clear
+  411  mkdir testdir && touch file1 && cp file1 file2 && mv ./* testdir
+  412  ll
+  413  cd testdir/
+  414  ll
+  415  rm -rf
+  416  mkdir testdir && touch file1 && cp file1 file2 && mv ./file* testdir
+  417  cd testdir/
+
+--------------------------------------
+
+ 406  date;uname -r;hostname;cal
+  407  date && uname -r && hossstname && cal
+  408  date ; uname -r ; hossstname ; cal
+ 
+  416  mkdir testdir && touch file1 && cp file1 file2 && mv ./file* testdir
+  417  cd testdir/
+  418  ll
+  419  clear
+  420  history
+  421  clear
+  422  cat > file1
+  423  cat -n file1
+--------------------------------------------------------------------------------------doubts
+  424  cat file1
+  425  cat file1 | head -9
+  426  cat file1 | head -9 | tail -3
+  427  cat -n file1
+
+  429  cat file1 | heah -11 | tail -1
+  430  cat file1 | head -11 | tail -1
+
+  433  cat -n file1
+  434  head -10 file1
+  435  head -n-5 file1
+  436  head -n-10 file1
+
+
+  443  cat -n file1 | head -4 | tail -1
+  444  history
+
+
+
+By tomorrow, we can finish the basic commands/////////////
+
+--------------------------------------
+user management 
+Permission
+Disk management 
+software management
+.
+.
+.
+.
+----------------------------------
+
+head filename | cat -n
+
+| it can store the previous command output and pass it to next command as a input
+
+cmd1 | cmd2 | cmd3 | cmd4
+
+
+ASCII ==> Americal Statndard code Information Interchange
+
+0-255 ==>characters will there...
+
+A-Z ==> 65-91
+a-z ==> 97-122
+0-9 ==> 48-57
+
+
+8 bits -->1 Byte
+
+a ==> 97
+
+  97
+2 48 - 1
+  24 - 0
+  12 - 0
+   6 - 0 
+   3 - 0
+   1 - 1
+   0 - 1
+
+01100001 ==> a
+
+0 ==>positive number
+1 ==>negative number
+
+a ==> 97 ==> 1100001 ==> a ==>1 Byte
+
+
+ wc(word count)
+   
+
+wc -w filename
+wc -l filename
+wc -c filename
+
+   -w count the words in file
+   -l count the line numbers from the file
+   -c count the char in the file
+
+----------------------
+  ls options
+ls -l : print the data in long list
+
+
+-rw-r--r-- 2   root  root  4096  10 aug  batch4
+drwxr-xr-x 2   root  root  4096   22 june test
+lrwxrwxrwx 2   root  root  12486  2019 june 20 bin
+
+
+
+field 1 : file type
+  - = regular file
+  d = directory
+  l = linked file or shortcut file from different place
+  b = block device files which can understand end user
+  c = chart device files which can understand OS
+  p = Pip (OS purpose)
+  S = Socket( OS purpose)
+
+Field 2: Permissions
+field 3: Hard link counts  
+field 4 : owner
+field 5 : group
+field 6 : size in bytes
+field 7 : creation/modify date and time of the file/directory
+field 8 : name of file/directory
+
+
+r = read 
+w = write
+x = execute 
+
+rwx rwx rwx
+U   G    O
+
+rwx r-x r-x
+U    G   O
+
+
+
+
+  ls -lt sort output with date and time
+
+latest will go up
+old will show down
+  ls -ltr
+ -l long list
+ -t sort out output with date and time
+ -r reverse the output
+ls -a prints normal and hidden files/directories
+
+ls -lrtha
+ls -alrth
+ls -arlth
+ls -htlra
+------------------------
+   more old method
+  less advanced . It a copy of vi command.
+  are for read file content page by page
+
+cat /batch4
+  more /var/log/messages
+  more /batch4
+  less /batch4
+
+space key for move on to next page
+b is for back to the previous page
+enter key is for move cursor line by line
+above three options will work in both less and more.
+
+q = quit from the more or less command
+
+in less command to move cursor arrow keys will work but in more command arrow keys will not work
+
+h = is for to get the help on options
+
+ls -l | more
+read the ls -l output page by page.
+
+  
+
+     touch .file1
+     mkdir .testdir
+   
+
+vi .tfile22
+------------------
+\n ==>new line
+\b=>back space
+\a ==>alarm
+\| ==> |
+\\ ==> \
+\/ ==/
+
+/ =>front slash
+\ =>back slash
+
+
+-----------------
+
+     GREP
+    -----
+
+grep is for search string/word from file or files in one depth of directory.
+
+to search file or directory is exist or not there we will use find command not grep.
+
+1. Grep : To search string in file
+2. find : to search file or directory in system.
+
+
+      grep <word> file name
+      grep <word> *
+      grep -w narasimha batch4
+      grep -wc narasimha batch4
+  grep -wn narasimha batch4
+grep -l narasimha *
+grep -A 5 narasimha /logfile
+
+
+w = word search
+c = count how many times it exist file
+n = print the line numbers where and all finds the word
+l = list out the filename where and all string exists. it can look only one depth of directory
+A = print 5 lines after string found ==>grep -A 5 'test' file
+B = print 5 lines before string found
+v ==> inverse the matching...
+
+how to search multiple strings
+   grep -w "word1\|word2\|word3\|word4" /filename
+---------------------------------------------
+  1  ping google.com
+    2  history
+    3  ping yohoo.com
+    4  clear
+    5  cal
+    6  date
+    7  dmidecode -s system-product-name
+    8  exit
+    9  sudo su -
+   10  ip a
+   11  ip -a
+   12  ip addr
+   13  history 
+   14  touch 123
+   15  ll
+   16  touch anaconda-ks.cfg 
+   17  ll
+   18  uname --help
+   19  arch
+   20  hostname
+   21  uname -n
+   22  ip a
+   23  ip addr
+   24  ifconfig 
+   25  hostname -I
+   26  ifconfig ens33
+   27  ifconfig -a
+   28  history
+   29  clear
+   30  mkdir -p a/{b/{p,q/{x,y/{j,k,l/{test,test1,test2}},z},r},c,d}
+   31  ll
+   32  tree
+   33  yum install tree
+   34  lsblk
+   35  cd /run/media/root/RHEL-7.6\ Server.x86_64/
+   36  ll
+   37  cd Packages/
+   38  ll
+   39  yum install tree-1.6.0-10.el7.x86_64.rpm 
+   40  history
+   41  cd -
+   42  cd /root/
+   43  ll
+   44  tree a
+   45  pwd
+   46  mkdir -p tomcat-base/{conf,logs,webapps/{ROOT,myApp1/{WEB-INF/{lib,classes}},myApp2},server,work,shared/{lib,classes}}
+   47  tree tomcat-base/
+   48  e
+   49  clear
+   50  whoami
+   51  logname
+   52  su - mahesh
+   53  exit
+   54  cat /etc/passwd
+   55  passwd manoj
+   56  passwd sreekanth
+   57  su - mahesh 
+   58  exit
+   59  cat > file1
+   60  cat < file1
+   61  cat file1
+   62  cat >> file1
+   63  cat file1
+   64  cat > file1
+   65  cat file1
+   66  cat > file1
+   67  cat file1
+   68  cat > file1
+   69  cat file1
+   70  ll
+   71  cat > notes
+   72  cat notes 
+   73  clear
+   74  cat --help
+   75  cat -n notes 
+   76  cat notes
+   77  cat -n notes
+   78  cat -b notes
+   79  history
+   80  exit
+   81  ip addr
+   82  clear
+   83  history
+   84    exit
+   85  cd /
+   86  cd /root
+   87  cd /boot
+   88  cd /root
+   89  cd /bin/
+   90  ll
+   91  clear
+   92  top
+   93  cat /etc/sysconfig/network-scripts/ifcfg-ens33
+   94  clear
+   95  su -manoj
+   96  su - manoj
+   97  userdel manoj
+   98  ll
+   99  userdel sreekanth
+  100  ls
+  101  exit
+  102  ip addr
+  103  clear
+  104  cat /etc/sysconfig/network-scripts/ifcfg-ens33
+  105  clear
+  106  su -manoj
+  107  useradd manoj
+  108  ll
+  109  su -manoj
+  110  sudo su -
+  111  history
+  112  tree
+  113  clear
+  114  useradd manoj
+  115  su - manoj
+  116  useradd lokesh
+  117  cat /etc/passwd
+  118  passwd
+  119  su - lokesh
+  120  exit
+  121  logout
+  122  clear
+  123  cat > file1
+  124  cat < file1
+  125  cat file1
+  126  cat > file1
+  127  cat file1
+  128  cat >> file1
+  129  cat file1
+  130  date
+  131  date > file2
+  132  cat file2
+  133  ll
+  134  ls
+  135  ls > file3
+  136  cat file3
+  137  cal
+  138  cal > file4
+  139  cat file4
+  140  date >> file4
+  141  cat file4
+  142  uname -r
+  143  uname -r >> file4
+  144  cat file4
+  145  clear
+  146  uname -v
+  147  uname -n
+  148  uname -m
+  149  clear
+  150  vi vivek
+  151  cat vivek 
+  152  cat >> vivek 
+  153  cat vivek 
+  154  vi vivek 
+  155  vi sudharshan
+  156  cat sudharshan 
+  157  vi notes
+  158  vi visualinterface
+  159  cat visualinterface 
+  160  vi visualinterface 
+  161  vim /etc/sysconfig/network-scripts/ifcfg-ens33 
+  162  vim visualinterface 
+  163  clear
+  164  vim visualinterface 
+  165  ip a
+  166  clear
+  167  vim visualinterface 
+  168  clear
+  169  vi notes
+  170  vim visualinterface 
+  171  cat visualinterface
+---------------------------------------------------------------------------------------- doubt
+  172  sed -i "s/cursor/TEXTLKDJFLKDJFKLDJFD/g"
+  173  sed -i "s/cursor/TEXTLKDJFLKDJFKLDJFD/g" visualinterface 
+  174  cat visualinterface 
+  175  sed -i "s/delete/DELETE/2g" visualinterface 
+  176  cat visualinterface 
+  177  cat visualinterface | grep DELETE
+  178  sed -i "s/delete/DELETE/3g" visualinterface 
+  179  cat visualinterface 
+  180  clear
+-----------------------------------------------------------------------------------------doubt
+  181  whoami
+  182  useradd test
+  183  passwd test
+  184  su - test 
+  185  clear
+  186  cat > testfile
+  187  cat testfile 
+  188  cp testfile testfile123
+  189  cat testfile
+  190  cat testfile123 
+  191  mkdir dir1
+  192  ll
+  193  ls -lrtha
+  194  cp testfile dir1/
+  195  \
+  196  tree dir1
+  197  cp testfile test1
+  198  cp testfile test2
+  199  cp testfile test3
+  200  cp testfile test4
+  201  cp test1 test2 test3 test4 test5
+  202  cp test1 test2 test3 test4 dir1/
+  203  tree dir1/
+  204  mkdir dir2
+  205  cp dir1/* dir2
+  206  tree dir2
+  207  tree dir1
+  208  cp test1 test5
+  209  cp test1 test6
+  210  cp test5 test6 test4 dir2
+  211  alias
+  212  ls
+  213  alias WENEEDDIRECTORIES='ls'
+  214  WENEEDDIRECTORIES 
+  215  cp test1 test2 test3 test4 test5
+  216  cat test1 test2 test3
+  217  cat test1 test2 test3 > test5
+  218  cat test5
+  219  tree dir1
+  220  tree dir2
+  221  cd dir1
+  222  ll
+  223  mkdir dir5
+  224  cd dir5
+  225  touch file{1..5}
+  226  ll
+  227  wpd
+  228  pwd
+  229  cd ..
+  230  tree
+  231  cd ..
+  232  pwd
+  233  ll
+  234  mkdir dir3
+  235  cp -r dir1/* dir3
+  236  tree dir3
+  237  mkdir dir4
+  238  cp -rv dir1 dir4
+  239  clear
+  240  history
+  241  clear
+  242  ll
+  243  ls -lrtha
+  244  mv test1 uday
+  245  ls -lrtha
+  246  mv test2 salehin
+  247  ls -lrtha
+  248  mv dir1 vivek
+  249  ls -lrtha
+  250  mv dir1 vivek
+  251  mv dir1/ vivek
+  252  mkdir dir123
+  253  mv dir123/ testdir123
+  254  ll
+  255  clear
+  256  mkdir test123
+  257  mv test123 kajsdflajsdfjaldf
+  258  ls -lrtha
+  259  mv --help
+  260  mv -f dir1 vivek
+  261  mv -fv dir1 vivek
+  262  ls -lrtha
+  263  mv -fv dir1 vivekguptha
+  264  ls -lrtha
+  265  mv -fv dir1 vivek
+  266  mv -fv dir3 vivek
+  267  mkdir kiran
+  268  cd kiran/
+  269  ll
+  270  mkdir test
+  271  touch file{1..10}
+  272  touch f{1..10}
+  273  touch sai{1..10}
+  274  ll
+  275  mv sai1 test/
+  276  ll
+  277  mv sai1 sai2 sai3 test
+  278  mv sai10 sai2 sai3 test
+  279  mv sai* test
+  280  ls -l test/
+  281  mv file1 file2 test
+  282  mv file10 file5 file4 test
+  283  ll
+  284  mv file{6..9} test
+  285  ll
+  286  mv f? test
+  287  ll
+  288  mv f* test
+  289  ll
+  290  tree test/
+  291  history
+  292  clear
+  293  ll
+  294  touch file{1..5}
+  295  mkdir xyz
+  296  ll
+  297  mv file1 file2
+  298  mv test/* xyz
+  299  tree xyz
+  300  tree test
+  301  ll
+  302  cd test/
+  303  ll
+  304  touch file{100..200}
+  305  ll
+  306  cd ..
+  307  ll
+  308  mv test/ xyz
+  309  ll
+  310  cd xyz
+  311  ls
+  312  history
+  313  ll
+  314  cd ..
+  315  ll
+  316  mkdir test
+  317  ll
+  318  rmdir test
+  319  ll
+  320  rmdir xyz
+  321  rm -rf file1
+  322  ll
+  323  rm -rf file2 file3
+  324  ll
+  325  rm xyz
+  326  rm -rf xyz/
+  327  ll
+  328  rm -rf *
+  329  ll
+  330  rm -rf v????
+  331  ll
+  332  history
+  333  cat /etc/os-release 
+  334  cat /etc/*release
+  335  uname -m
+  336  arch
+  337  hostnamectl status 
+  338  hostname
+  339  hostnamectl set-hostname batch13Machine
+  340  exit
+  341  clear
+  342  hostname
+  343  uname -n
+  344  uname --help
+  345  uname -n
+  346  hostname
+  347  clear
+  348  ip a
+  349  ip addr
+  350  ifconfig
+  351  ifconfing -a
+  352  ifconfig -a
+  353  ifconfig ens33
+  354  hostname --help
+  355  hostname -I
+  356  hostname --all-ip-addresses
+  357  history
+  358  free 
+  359  free -m
+  360  free -g
+  361  free -k
+  362  free -h
+  363  free --help
+  364  free -s 2 -c 5
+  365  free -s 2 -c 10
+  366  top
+  367  clear
+  368  cat /proc/cpuinfo 
+  369  cat /proc/meminfo 
+  370  lscpu
+  371  lsblk
+  372  lsscsi
+  373  fdisk -l
+----------------------------------------------------------
+  374  dmidecode -s system-product-name
+  375  dmidecode s system-serial-number
+  376  dmidecode -s system-serial-number
+  377  dmidecode 
+  378  clear
+  379  dmidecode
+  380  '
+  381  ''
+  382  dmidecode -s system-serial-number
+  383  dmidecode -s system-product-name
+----------------------------------------------------------
+  384  cat > head and tail commands
+  385  head command is for print starting 10 lines of the file
+  386  head <filename>
+  387  head -20 <filename>
+  388  head -50 <filename>
+  389  tail command is for print last 10 lines of the file
+  390  tail <filename>
+  391  tail -5 <filename>
+  392  tail -100 <filename>
+  393  clear
+  394  cat > file1
+  395  clear
+  396  cat > data
+  397  cat -n data
+  398  head data
+  399  tail data
+  400  head -4 data
+  401  tail -4 data
+  402  clear
+  403  date
+  404  cal
+  405  uname -r
+  406  clear
+  407  date;uname -r;hostname;cal
+  408  date && uname -r && hossstname && cal
+  409  date ; uname -r ; hossstname ; cal
+  410  rm -rf *
+  411  clear
+  412  mkdir testdir && touch file1 && cp file1 file2 && mv ./* testdir
+  413  ll
+  414  cd testdir/
+  415  ll
+  416  rm -rf
+  417  mkdir testdir && touch file1 && cp file1 file2 && mv ./file* testdir
+  418  cd testdir/
+  419  ll
+  420  clear
+  421  history
+  422  clear
+  423  cat > file1
+  424  cat -n file1
+  425  cat file1 
+  426  cat file1 | head -9 
+  427  cat file1 | head -9 | tail -3
+  428  cat -n file1
+  429  cat file1 | head 9 -r 
+  430  cat file1 | heah -11 | tail -1
+  431  cat file1 | head -11 | tail -1
+  432  '
+  433  clear
+  434  cat -n file1
+  435  head -10 file1
+  436  head -n-5 file1
+  437  head -n-10 file1
+  438  cat file1 | head -n-10|tail -1
+  439  clear
+  440  cat -n | head -3 | tail -9
+  441  cat -n file1
+  442  cat -n 5 file1 | head 4 | tail 4
+  443  cat -n | head -4 | tail -1
+  444  cat -n file1 | head -4 | tail -1
+  445  history
+  446  ip a
+  447  clear
+  448  cat >rajuxyz{1..10}
+  449  cat >>rajuxyz{1..10}
+  450  cat --help
+  451  clear
+  452  exit
+  453  lscpu
+  454  head -10
+  455  clear
+  456  history
+  457   clear
+  458  clear
+  459  ll
+  460  cat > file1
+  461  cat file1 
+  462  clear
+  463  wc file1 
+  464  wc -l file1 
+  465  wc -w file1 
+  466  wc -c file1 
+  467  ll
+  468  cat > file2
+  469  cat file2
+  470  ll
+  471  wc -c file2
+  472  clear
+  473  touch file{1..20}
+  474  ll
+  475  ll | wc -l
+  476  ll|wc -l
+  477  ll
+  478  ll|wc -l
+  479  cd
+  480  pwd
+  481  ls
+  482  ls -l
+  483  ll
+  484  alias
+  485  clear
+  486  ll
+  487  clear
+  488  ls -l
+  489  cd /dev
+  490  ls -l
+  491  lsblk
+  492  ls
+  493  cd /usr/bin
+  494  ls
+  495  ll
+  496  ll | grep ls
+  497  ll
+  498  cd
+  499  ll
+  500  > file18
+  501  ll
+  502  ls -l
+  503  rm -rf *
+  504  mkdir kiran
+  505  mkdir uday
+  506  mkdir veeranjaneyulu
+  507  touch anji
+  508  touch sreenu
+  509  touch vivek
+  510  touch pallavi
+  511  touch ashwini
+  512  touch manoj
+  513  touch sreekanth
+  514  touch sai
+  515  ll
+  516  ls -l
+  517  ls -lt
+  518  ls -ltr
+  519  ls -l
+  520  ls -lr
+  521  ls -lrth
+  522  cat > anji
+  523  cat > sai
+  524  ls -lrth
+  525  tar -cvzf etc.tar /etc/*
+  526  clear
+  527  ll
+  528  ls -ltrh
+  529  ls -a
+  530  cat .sainarasimhaprasad
+  531  cat > .sainarasimhaprasad
+  532  ls -l
+  533  ls -la
+  534  ls -lrtha
+  535  ls -a
+  536  ls -ld
+  537  ls -d
+  538  ll
+  539  alias
+  540  l.
+  541  clear
+  542  ls -l -r -t -h -a
+  543  ls -lrth -a
+  544  cat > notes
+  545  clear
+  546  cat notes 
+  547  clear
+  548  more notes 
+  549  less notes 
+  550  less notes
+  551  vim notes 
+  552  more notes 
+  553  ll | more
+  554  touch file{1..100}
+  555  ll | more
+  556  clear
+  557  GREP ==>Global Regular Expression
+  558  cat > data
+  559  cat > data1
+  560  cat > data2
+  561  clear
+  562  cat data
+  563  grep "some" data
+  564  cat > data
+  565  grep "some" data
+  566  grep -w "some" data
+  567  grep "some" data
+  568  cat data
+  569  grep -i "some" data
+  570  grep "some" data
+  571  grep -w "some" data
+  572  grep "some" *
+  573  grep -i "some" *
+  574  grep -in "some" *
+  575  ll
+  576  grep -in "some" *
+  577  grep -n "some" *
+  578  grep --help | grep recursive
+  579  clear
+  580  grep -r "some" *
+  581  ll
+  582  cd uday/
+  583  cat > udayfile
+  584  clear
+  585  grep -r "some" *
+  586  cd ..
+  587  pwd
+  588  ll
+  589  grep -r "some" *
+  590  grep "some" *
+  591  grep -rniw"some" *
+  592  grep -rniw "some" *
+  593  
+  594  grep -rf "some" *
+  595  grep -rl "some" *
+  596  grep -w "data\|some" *
+  597  grep -w "data\|some\|uday" *
+  598  grep -A5 "data" *
+  599  grep -B5 "data" *
+  600  cat > names
+  601  grep -v "sai" names 
+  602  grep -v "veera" names 
+  603  cat > grepdata
+  604  grep -v "print" grepdata 
+  605  ll
+  606  ls -l data*
+  607  ls -l file?
+  608  ls -l file??
+  609  hostnamectl status
+  610  hostnamectl status | grep "Architecture"
+  611  hostnamectl status | grep "Architecture" | awk '{print $2}'
+  612  hostnamectl status
+  613  hostnamectl status | grep "Archi*" | awk '{print $1}'
+  614  hostnamectl status | grep "Archi*" | awk '{print $2}'
+  615  nslookup google.com
+  616  nslookup google.com | grep "Address"
+  617  nslookup google.com | grep "Address" | awk '{print $2}'
+  618  nslookup google.com | grep -v "#" 
+  619  nslookup google.com
+  620  nslookup google.com | grep -v "#" 
+  621  nslookup google.com | grep -v "#" | grep -w "Address"
+  622  nslookup google.com | grep -v "#" | grep -w "Address" | awk '{print $2}'
+  623  nslookup google.com
+  624  nslookup google.com | grep "Address"
+  625  nslookup google.com | grep "Address" | grep -v "#"
+  626  nslookup google.com | grep "Address" | grep -v "#"|awk '{print $2}'
+  627  cat /etc/os-release 
+  628  cat /etc/os-release|grep "7.6"
+  629  cat /etc/os-release|grep "7.6" | grep "REDHAT_BUGZILLA_PRODUCT_VERSION"
+  630  cat /etc/os-release|grep "7.6" | grep "REDHAT_BUGZILLA_PRODUCT_VERSION" | awk -F= '{print $2}'
+  631  clear
+  632  history
+
+[11:13 AM, 4/18/2022] Sai(Linux): HARD LINK vs SOFT LINK
+--------------------------------------------------------
+--------------------------------------------------------
+
+to create the link we use 'ln' command 
+==>if you update the data to a source file, it will update in the destination...and vice versa..
+
+
+inode number: 
+------------------
+dir1 ==> file1
+dir2 ==> file1
+
+there will be an inode structure in the Linux system==>
+
+/
+opt home root ...............
+dir1, dir2......................
+d1 d2 d2................
+
+
+HARD LINK
+----------
+ln source destination
+inode numbers are same
+sizes also same
+if you delete the source file, destination file will still be valid..
+We can create only for files not for directories
+we can not create link file across partitions
+
+SOFT LINK / Symbolic LINK
+----------
+ln -s source destination
+inode numbers are different
+sizes also different
+if you delete the source file, destination file will not be a valid file...
+we can create for files and also for directories
+we can create across partitions..
+
+
+
+
+
+
+Links (shortcut)
+  1. Hard link
+          2. soft link
+
+* explain differences between hard link and soft link?
+HARD LINK                          SOFT LINK
+1. Hard links shares the same inode number         1. Soft link will maintain different inode number for sorce and destion.
+2. Possible to create link only for files          2. possible to create link for files and directories.
+3. Not possible to create link across the          3. possible to create link across the partitions. from anywhere to  
+partitions like /boot file can't             anywhere
+   possible to create in / partition.
+4. source and linked files size will be same            4. linked files size will be very less because it calculate path and
+                                 decide the size. I mean based on lenth of file name it occupies
+                        the linked file size.
+
+
+*  using Hard link file has been linked to other place, now unfortunatly oginal file has been deleted. is linked file can be accessible?
+ans: Yes still linkd files can be accesible if links are created using hard link. it is almost equal to copy only
+
+
+soft link
+ln -s  source destination
+hard link
+ln source destination
+
+unlink destinationpath
+
+
+
+
+what is hard link?
+what is symbolic link?
+can we create hard link across partition?
+what is an Inode number?
+	Inode number is system defined number which is used by system to identity each file in the system.. And the inode number holds the meta data information of a file.
+meta data ==> data about data..
+
+how to know the inode number of a file?
+	ls -li
+
+how data will be stored in the HDD, SSD?
+ in the form of blocks
+
+each block has 512 Bytes.. ==> 1 Sector
+
+per every disk or partition there will be a inode limit ==> how many file we can create per disk...
+
+100000 files ==> 20GB 
+
+150K ==> 150000 ===>used
+
+8.4 M ==> free 
+
+20GB ==> 8.4M ==> 8.4M files ==> 10GB is free ==>
+
+will you be able to create a file/directory if there is inode limit is exceeded?
+	NO, we won't be able to create.. either you need to delete the unwanted files then obviously we get the space of inode limit or you need to extend disk space...
+
+how can we identify hard links
+3rd field in the ls -l command
+
+how ccan we identify the soft link/
+first field in the ls -l command would be "l"
+---------------------------------------------------
+
++5:30 ==> IST ==> Indian Standard Time
+
++9 ==> Japan ==> 3 PM
++5:30 ==> 10:30
+
+
+EST ==> 6:30 PM - 3:30 AM
+CST ==> 7:30 PM - 4:30 AM
+PST ==> 10 PM - 7 AM
+MST
+CET ==> 2 PM - 11 PM 
+
+
+
+  date +"%F"
+
+how to set or adjust the date and time?
+  date -s "10 aug 2020 07:20:35 AM"
+how to change the timezone?
+
+step 1 : remove softlink of existing zone file from /etc
+    rm -rf /etc/localtime
+step 2 : create link of timezone file
+ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+
+
+---------------------
+
+      Find
+ 
+to search file or directory.
+
+grep and find
+
+
+grep is for search string in file or files , it can search string only one depth.
+
+
+        -name
+        -perm
+  -ownername -user
+  -groupname -group
+  -size
+  -modify date & time -mtime & -mmin
+  -access date & time> -atime & -amin
+
+
+
+find /etc -name testfile
+
+find <path> -name <fullfillthe option>
+
+find / -name testfile
+
+find / -iname file22 ==>iname ->Ignore case   ABC, abc, Abc, aBC
+find / -type f -iname file22 -exec rm -rf {} \;
+
+find / -type f -perm 0777
+find / -type f -perm 0777 -exec chmod 0770 {} \;
+
+
+find / -type f -user narasimha
+find / -type f -user narasimha -exec chown venu {} \;
+
+find /etc -type f -mtime +365
+  -mtime modify days
+
+-mtime +90 ==> 90 days old files 
+-mtime -90 ==> changes in 90 days
+
+
++3 ==> 3 days old file
+-3 ==> in last 3 days there is a change 
+
+find /etc -type f -mmin -60
+  -mmin = modify min
+
+find out file which are modified with in 1 hour in /etc directory.
+
+-mmin +60
+
+find /etc -type f -atime
+
+find /path/to/folder -name 'test'
+
+---------------------------------------------
+90 days old files 
+
+file1
+file2 ==> I want this file too
+file3 ==> I want this file 
+.
+.
+.
+file100
+
+
+touch file2 file3
+
+find / -type f -mtime +90 -exec rm -rf {} \;
+--------------------------------------------------------------------
+* application data is there in /app/log/, /app partition is almost full.
+
+ /app is a partition, easy approach is extend partition space. there is alternative way that is clear the old logs.
+
+        find /app/log -type f -mtime +90 -exec rm -rf {} \;
+  find /app/log -type f -mtime +10 -exec gzip {} \;
+
+
+find out older than 6 months files and list out only greater than 1 GB data files?
+ find /data -type f -size +980M -mtime +180
+
+
+a=`find the older than 6 months data` > /files
+b=`find the greater than 1 GB data files`
+
+if [ $a >= 160 && $b >= 1G ];
+then
+do
+else
+fi
+*************
+rm
+mv
+
+
+mv file1 file2 => renaming a file
+mv dir1 dir2 ==> renaming a directory
+mv file1 dir1 ==> moving file to a directory
+mv file1 file2 file3 dir1 ==> moving the multiple files into a directory 
+mv dir1 dir2 ==> it moves the dir1 into dir2 if the dir2 exists..
+************
+[11:13 AM, 4/18/2022] Sai(Linux): 475  ln file1 desfile
+  476  ll
+  477  ln file1 test123
+  478  ll
+  479  cat desfile file1 test123 
+  480  cat desfile 
+  481  cat >> file1
+  482  cat file1 
+  483  cat desfile 
+  484  cat test123 
+  485  cat >> test123 
+  486  cat desfile 
+  487  cat file1 
+  488  clear
+  489  ls -li
+  490  rm -rf file1 
+  491  ll
+  492  cat test123 
+  493  cat >> test123 
+  494  cat  test123 
+  495  cat desfile 
+  496  ll
+  497  ls -li
+  498  clear
+  499  cat > src
+  500  ln -s src des
+  501  ll
+  502  ls -li
+  503  rm -rf src
+  504  ll
+  505  cat des
+  506  cd /
+  507  ll
+  508  cd /bin
+  509  pwd
+  510  cd
+  511  ll
+  512  ls -li
+  513  cd /dev
+  514  ll
+  515  lsblk
+  516  ll
+  517  \
+  518  cd 
+  519  ll
+  520  ls -li
+  521  cat 33574978
+  522  per every disk 
+  523  d…
+ compression(zip,tar and gzip)
+
+
+compress
+     zip -r /opt/testdir.zip /etc
+            destination     source
+extract
+    unzip /opt/testdir.zip
+
+how to listout content of zip file
+    unzip -l /opt/testdir.zip
+
+
+how to append some more files to existing zip
+    zip -u /opt/testdir.zip /var/log/messages
+    zip -u /opt/bkpofetc-12-09-2021.zip /var/log/messages
+    adding: var/log/messages (deflated 86%)
+TO delete files from zip
+    zip -d /opt/bkpofetc-12-09-2021.zip var/log/messages
+
+tar: tape archive
+     tar -cvf /opt/bkpofetc-12-09-2021.tar /etc
+      c = create
+      v = verbose
+      f = force
+tar -xvf /opt/bkpofetc-12-09-2021.tar
+        - x = extract
+to listout contents of the tar file
+    tar -tvf /opt/bkpofetc-12-09-2021.tar
+
+        gunzip
+
+using gunzip we can compress the files.
+    touch /testfile
+compress file using gunzip
+    gzip /testfile
+extract compressed file
+    gunzip testfile.gz
+    
+To zip the tar files
+     tar -cvzf
+     tar -xvzf
+-a = perserves the permissions like source
+-v = verbose
+-z = compress
+-r = recorsively
+
+-------------------------
+
+.zip
+.tar
+.tar.gz
+
+you can just extract and you can use them
+
+.rpm ==> redhat package manager
+
+rpm -ivh packagename.rpm
+yum install packagename.rpm
+
+yum install packagename...
+
+Download tar file...
+    https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz
+
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz
+
+/opt 
+
+/etc
+/lib
+/usr/bin
+/usr/sbin
+
+zip -r destination source
+zip -r /root/mydir/mydir1/filename.zip /etc/*
+tar 
+gzip 
+-----------------------------------------------------------
+User Administration
+
+		1. Local user management
+		2. Centralized user management
+
+
+dev team
+test team
+devops
+production teams
+linux admin
+
+VM/instance/system/virtual machine
+
+create user, modify user, delete user, set password, etc....
+
+
+       servers: why we will build servers?
+
+		to develop application, to supply data from application, to maintain data in the server
+
+ICICI net banking application, HDFC net banking appllication, amazon.com, flipkart.com, sbi net banking
+
+
+   application devel , application support team, DB team, infra team ( OS,network,backup,Storage, Dc team).
+
+      Infra team support:  server build(OS installation), disk management, User management, network setup in OS.
+
+	 20 Members team, for 20 memebers we have to create individual account.
+	also to run application we need to create common user
+	      to run db need one local/common user
+
+
+    Local user management:
+
+    	user name : Max 32 char
+	uid : 
+		0 = root
+		1 - 99 = OS users(system users)lib,bin,.....
+		100 - 999 = id are reserved for third party application/tool users(tomcat,apache,nfs,.....)
+		1000 - 60000 = local users or general users
+
+when you create a user, what are all the files will get affected?
+useradd raghu
+	it will create user and it give an entry in the /etc/passwd file
+   it will also create an entry /etc/shadow ==>which has password information
+   it will also create an entry in the /etc/group file
+	it will also create an entry in the /etc/gshadow file..
+
+	And it creates a home directory for that user that is /home/raghu and it will also create the profiles 
+
+-rw-------.  1 raghu raghu   5 Apr 20 15:22 .bash_history
+-rw-r--r--.  1 raghu raghu  18 May 22  2018 .bash_logout
+-rw-r--r--.  1 raghu raghu 193 May 22  2018 .bash_profile
+-rw-r--r--.  1 raghu raghu 231 May 22  2018 .bashrc
+
+.bash_history ==> can see the history of commands  ==> this file will get created once you login and logout from the user
+.bash_logout ==> if you want perform anything while logout you can put those statements here..
+.bash_profile ==> user specific environment profile ==> it will load at the time of login of a user.. user need to specifiy hyphen for su command to load this.
+	ex: "su - username"
+	if you don't specify hyphen, you need externally run the ".bash_profile"
+.bashrc ==> it is also same as .bash_profile and .bash_profile calls .bashrc internally 
+
+Global environment variable file ==> /etc/profile
+
+how can see all the variables for a specific user?
+	env
+how to switch to a user?
+	su - username
+how to logout from a user?
+	exit
+	logout
+	ctrl+d
+
+
+-------------------------------------------
+
+/etc/passwd fields:
+* what are fields of /etc/passwd
+  there will be 7 fields, each field will be seperated with :
+	prasad:x:2001:2001:prasad s:/home/prasad:/bin/bash
+
+1: username
+2: pointing to /etc/shadow file for password informaton
+3: Uid
+4: primary group id
+5: comment
+6: home directory
+7: shell 
+
+how to know the available shells in the system?
+[root@batch13machine ~]# cat /etc/shells 
+/bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+/bin/tcsh
+/bin/csh
+/bin/nologin
+/sbin/nologin
+
+
+raghu ==> 1006 ==> UID
+raghu ==> 1006 ==> pramary GID
+linuxgroup ==> secondary group
+------------------------------
+/etc/shadow fields:
+
+there will be 8 fields
+1. Username
+2. encrypted password
+3. password changes days count from jan-1-1970
+4. min age of password  2 days
+5. max age of password  . password is going to expair
+6. warning age of password : war 10 exp 30 from 20 days onwards it will give warning message on screen while login . 
+         user your password is going to expair in 10
+		your password is going to expair in 9 days
+		next 
+7. inactive days for password after password expaires   10 days. 30 but still password will be in active for another 10.
+				30 + 10 40 he can't change password after 40 days.
+			
+		
+8. account expairy days
+
+
+----------------------------------------------
+/etc/group ==> this will have all the groups information including primary group and secondary group...
+/etc/gshadow
+
+---------------------------------------------
+
+  group:
+	1. Primary group
+	2. secondary group
+  home directory : /home/narasimha  /home/venu
+  shells : /bin/sh ,/bin/bash, /bin/dash,/bin/csh , /bin/tcsh & /bin/nologin
+
+
+-------------------------------------------------------
+ simple command: 
+	useradd raghu
+
+Creating user with specifications:
+	useradd -u 2000 -g 2000 -G 0 -d /opt/raghu -m -c "Linux expert" -s /bin/csh raghu
+
+
+	u = UID
+	g = Primary group
+	G = Secondary group
+	d = Home directory path
+	m = Make home directory
+	c = comment
+	s = shell for user
+
+useradd ashwini
+	where we can specify default home directory and shell in the linux system?
+		/etc/default/useradd
+
+if you want to create any new user with different home directory and different shell you can create using useradd command options or you can specifiy home directory and shell in the /etc/default/useradd file before creation of the user...
+
+
+How to know is the user exist in server?
+	id raghu
+	grep "raghu" /etc/passwd
+	cat /etc/passwd | grep "raghu"
+
+how to set password for user?
+	passwd username
+	passwd venu
+
+How to get all users informaton?
+   	cat /etc/passwd 
+	grep venu /etc/passwd
+
+last 10 users
+	tail /etc/passwd
+which is the default shell in RHEL?
+	/bin/bash
+
+how to create group
+	groupadd unixgrp
+
+
+     useradd prasad2
+
+   each and every user will have one primary group and the users can be member into n number of groups
+  1 primary and he can member into n number of groups
+
+
+
+ group will create along with user
+	useradd appuser
+	   there will app group also
+
+  	for appuser primary group is appuser
+
+	useradd -g appuser -G root appuser1
+		username = appuser1
+		pr gr = appuser
+		se gr = root
+   	        appuser group is shared between appuser and appuser1
+
+	useradd sai
+		primary group = sai
+		login name = sai
+		are you member into any of the group ? no
+
+	useradd -g sai -G root,prasad sai1
+		primary group : sai
+		sec group     : root and prasad
+
+rwxrwx---
+
+	users information will update in the /etc/passwd
+	password information will update in the /etc/shadow
+	group information will update in the /etc/group
+
+id username
+lid -g groupname
+
+
+
+
+useradd -u 3000 -G unixgrp -d /opt/salman -m salman
+   /bin/bash
+   salman : pg
+
+/etc/default/useradd 
+this file is going feed the missing informtion to useradd command
+
+/etc/default/useradd file will feed the specification if we haven't specified in useradd command.
+
+
+
+how to specify /bin/dash shell for all upcoming users?
+useradd -s /bin/dash username
+ans : in this case we can update default shell in /etc/default/useradd
+
+already 100 users created with /bin/bash by mistake , here how we can change /bin/bash to /bin/dash shell for these 100 users?
+
+in this case /etc/default/useradd file will not help to change default shell information for existing users.
+
+
+
+useradd -u 5000 -G unixgrp -d /usr/local/apache -m -c "apache user" -s /bin/sh apachetomcat
+
+
+
+password information will be there in /etc/shadow
+
+narasimha:encrypted password:18949:2:99:7:10:300
+
+
+there will be 8 fields
+1. Username
+2. encrypted password
+3. password changes days count from jan-1-1970
+4. min age of password  2 days
+5. max age of password  . password is going to expair
+6. warning age of password : war 10 exp 30 from 20 days onwards it will give warning message on screen while login . 
+         user your password is going to expair in 10
+		your password is going to expair in 9 days
+		next 
+7. inactive days for password after password expaires   10 days. 30 but still password will be in active for another 10.
+				30 + 10 40 he can't change password after 40 days.
+			
+		
+8. account expairy days
+
+------------------------------------
+!! ==> no password set
+!! with encrypted password ==> password got locked
+! with encrypted password ==> account itself got locked..
+
+
+how to lock the password?
+	passwd -l username 
+how to unlock the password?
+	passwd -u username
+how to check the status of a user?
+	passwd -S username
+
+how to lock the user account?
+	usermod -L username
+how to unlock the user account?
+	usermod -U username
+
+
+	
+
+
+-----------------------------------
+
+
+date aug 20 2020
+  if i say today your contract will expair after one year. what is this mean today aug 20 2021
+
+tomorrow also if i say your   
+
+
+    max 60
+
+for narasimha we changed password today.    oct 20
+
+usermod -g existinggroup username
+
+
+expairy is 30
+  18494  
+   21-08-2020 today we changed password
+
+passwd -S narasimha
+
+how we can change password age
+   passwd -n 3 -x 90 -w 10 narasimha
+
+	-n : min age of password
+	-x : max age of your password
+	-w : warning days of password expairy
+
+lock the password of specified user:    passwd -l narasimha
+unlock the password of specified user : passwd -u narasimha
+
+  passwd -x 100 narasimha
+  passwd -x -1 narasimha  : password shoud never expair
+
+   min : n
+   max : x
+   war : w
+
+
+   chage -l narasimha
+	chage -M 200 narasimha
+	-M : uper case M is for set Maximum age of password
+	-m : small is for set min age of password  passwd -n 3 username but in chage . chage -m 4 narasimha
+
+	chage -M -1 narasimha
+	or
+	passwd -x -1 narasimha
+password should not expair
+
+
+how to lock the account?
+	usermod -L sai
+how to unlock the account?
+	usermod -U sai
+passord lock 
+	passwd -l sai
+	passwd -u sai
+
+
+how we can identify is the password is locked?
+	/etc/shadow in this file second field if we can see !! before encryption password means password is locked
+	/etc/shadow in this file second field if we can see ! before encryption password means account is locked
+	/etc/shadow in this file second field if we can see only !! without any encryption data means no password set
+
+
+create group
+	groupadd appteam
+	groupadd oraclegrp
+with the specifications creating group
+	groupadd -g 5000 oraclegrp
+------------------
+gshadow  
+gpasswd  ==> to set the password for the group
+--------------
+How to delete user only not home directory?
+	userdel username
+How to delete user with home directory?
+	userdel -r username
+
+How to delete group?
+	groupdel oragrp
+
+gpasswd -M user2,user3 mygroup1
+
+ usermod -G mygroup user3
+	usermod -G group1,group2,group3 username
+
+
+which are files will get updated once account creates?
+	1. /etc/passwd
+	2. /etc/shadow
+	3. /etc/group
+
+----------------------------
+how to create the multiple users at a time?
+	
+
+---------------------------
+awk command is for print the data in colum vise from output/file.
+
+How to print Only normal users not system users?
+
+How to change password max age to 90 days to users which are having password age more than 90 days
+
+awk -F: '{if ($5 > 90) print $1}' /etc/shadow > /tmp/narasimhafile
+ 
+suppose there are 1000 users which are having password age is more than 90
+
+chage -M 90 user1
+chage -m 90 user2
+
+for i in `cat /tmp/narasimhafile`
+do
+chage -M 90 $i
+done
+
+
+
+if [ condition1 && condition2 ];
+
+
+   create user
+	mod user
+	delete user
+	what is group
+	1. Primary
+	2. secondary
+	create group
+	modify group
+	adding members into group
+
+what is variable?
+ there are 2 types variables
+	1. System variables 
+	2.User defined variables
+
+
+system variables are predefined variables. functionality or values already stored by operating system developer.
+
+user defined variables: end user will define or store the values in variable.
+
+for system variables you can't change the functionality but we can control the variable with help of options.
+ 
+
+How to list out System variables?
+	env
+
+How to change system variable value temp?
+
+     export SYSTEMVARIABLENAME=
+	export HISTSIZE=3000
+how to set system varaable value perm?
+	step1:update the new value in /etc/profile
+		HISTSIZE=3000
+	step 2: manually refresh the environment configuration file.
+		source /etc/profile
+
+
+How to set variable temp?
+
+		  udf :    a=10
+	    	  system : export HISTSIZE=4000
+		unset a
+		unset HISTSIZE
+
+ 
+
+difference between 3 quotes
+	"  "
+	'  '
+	`  `  you can fine below of esc key
+
+
+" "  is for print the value what we defining
+
+
+
+   Global environment configuration files    : /etc/profile, /etc/bashrc
+   Individual environment configuration files: .bash_profile,.bashrc,.bash_logout .
+	 individual env files we can find in home directories of individual users home directory.
+
+
+By default 3 files will be copied to your user as soon as creates user.
+	1. .bash_profile
+	2. .bashrc
+	3. .bash_logout
+next login onwards one more file will create in his home directory
+	4. .bash_history
+
+by default above 4 files will present in home directory of all the users, include root.
+   skeliton
+
+global variables we will set in /etc/profile or /etc/bashrcles 
+
+individual variables we will set in his own files /home/username/.bashrc and .bash_profile
+
+========
+
+
+How to create multiple users at a time.
+step 1 : create a file with usernames
+	vi /tmp/users
+		user1
+		user2
+		user3
+		user4
+		user5
+step 2 : run below for loop to create users
+	for i in `cat /tmp/users`
+		do
+		useradd $i
+		done
+
+How to set password for multiple users?
+step 1 : create a file with usernames
+	vi /tmp/users
+		user1
+		user2
+		user3
+		user4
+		user5
+step 2 : run below for loop to set same password for all users?
+	for i in `cat/tmp/users`
+		do
+		echo "$i:test12345"|chpasswd
+		done
+
+how to set password in single time without retype same password?
+
+  actually when we try passwd username
+	it expects two times same password to set password
+
+echo "username:test1234567"|chpasswd
+
+------------------------------------
+
+476  useradd raghu
+  477  cat /etc/passwd
+  478  su - raghu
+  479  cat /etc/shells 
+  480  cat /etc/shadow
+  481  useradd sreenu
+  482  passwd sreenu
+  483  cat /etc/passwd
+  484  cat /etc/shadow
+  485  cat /etc/group
+  486  cat /etc/gshadow
+  487  cd /home/
+  488  ll
+  489  --
+  490  cd raghu/
+  491  ll
+  492  ls -la
+  493  cat /etc/profile
+  494  env
+  495  cat /etc/profile
+  496  su - raghu
+  497  cd /home/sreenu/
+  498  ls -la
+  499  useradd -u 2000 -g 2000 -G 0 -d /opt/raghu -m -c "Linux expert" -s /bin/csh raghu
+  500  useradd -u 3000 -g 3000 -G 0 -d /opt/raghu -m -c "Linux expert" -s /bin/csh raghu
+  501  useradd -u 3000 -G 0 -d /opt/raghu -m -c "Linux expert" -s /bin/csh raghu
+  502  useradd -u 3000 -g 3000 -G 0 -d /opt/praveen -m -c "Linux expert" -s /bin/csh praveen
+  503  useradd -u 3000 -G 0 -d /opt/praveen -m -c "Linux expert" -s /bin/csh praveen
+  504  cat /etc/passwd
+  505  cat /etc/shadow
+  506  cat /etc/group
+  507  cat /etc/gshadow
+  508  cd /opt/praveen/
+  509  ls -la
+  510  useradd ashwini
+  511  cat /etc/passwd
+  512  cat /etc/default/useradd
+  513  vim /etc/default/useradd 
+  514  useradd anji
+  515  cat /etc/passwd
+  516  id raghu
+  517  grep "raghu" /etc/passwd
+  518  cat /etc/passwd | grep "raghu
+"
+  519  cat /etc/passwd | grep "raghu"
+  520  cat /etc/passwd | grep "ashwini"
+  521  usermod -s /bin/csh raghu
+  522  cat /etc/passwd|grep "raghu"
+  523  groupadd unixgroup
+  524  usermod -G unixgroup raghu
+  525  usermod -G unixgroup praveen
+  526  useradd -G unixgroup sudharshan
+  527  whoami
+  528  id sudharshan
+  529  lid -g unixgroup
+  530  cat /etc/group
+  531  clear
+  532  vim /etc/ssh/sshd_config 
+  533  passwd raghu
+  534  passwd praveen
+  535  su - raghu
+  536  vim /etc/shadow
+  537  passwd --help
+  538  passwd -S raghu
+  539  passwd -l raghu
+  540  passwd -S raghu
+  541  cat /etc/shadow
+  542  usermod -L praveen
+  543  usermod -S praveen
+  544  passwd -S praveen
+  545  passwd -S raghu
+  546  usermod --help
+  547  passwd -S praveen
+  548  cat /etc/shadow
+  549  passwd -n 3 -x 90 -w 10 sudharshan
+  550  cat /etc/shadow
+  551  passwd -x -1 sudharshan
+  552  cat /etc/shadow
+  553  chage -l sudharshan
+  554  chage -M 90 sudharshan
+  555  chage -l sudharshan
+  556  chage -M 95 sudharshan
+  557  chage -l sudharshan
+  558  gpasswd unixgroup
+  559  gshadow --help
+  560  man gshadow
+  561  q
+  562  usermod vivek
+  563  useradd vivek
+  564  useradd pallavi
+  565  useradd manoj
+  566  gshadow -u vivek,pallavi,manoj unixgroup
+  567  gshadow
+  568  lsblk
+  569  mount /dev/sr0 /media/
+  570  cd /media/
+  571  ll
+  572  cd Packages/
+  573  userdel sudharshan 
+  574  cd /opt/
+  575  ll
+  576  userdel -r anji
+  577  ll
+  578  cd /
+  579  vim userlist
+  580  cat userlist 
+  581  for xyz in {1..10}; do echo $xyz; done
+  582  for xyz in user1,user2,user4; do echo $xyz; done
+  583  for user in `cat userlist`; do useradd $user; echo $user " is created just now"; done
+  584  cat /etc/passwd
+  585  for user in `cat userlist`; do usermod -s /bin/bash; echo " shell got changed for the $user"; done
+  586  cat /etc/passwd
+  587  for user in `cat userlist`; do usermod -s /bin/bash $user; echo "shell got changed for the user" $user; done
+  588  cat /etc/passwd
+  589  history
+
+------------------------------
+	DISK MANAGEMENT
+
+
+		Disk Architecture
+
+	Disk management methods
+	1. Basic Method
+	2. LVM Method (Logical Volume management)
+	3. Raid(MDADM)
+
+ 
+01011001 = 8 Bits
+
+8 Bits  	= 1 Byte
+1024 Bytes 	= 1 KB (Kilobyte)
+1024 KB		= 1 MB (Megabyte)
+1024 MB		= 1 GB (gigabyte)
+1024 GB		= 1 TB (Terabyte)
+1024 TB		= 1 PB (Petabyte)
+1024 PB		= 1 EB (Exa byte)
+
+1 sector = 512 Bytes
+2 sectors = 1 KB
+--------------------------------
+storage team to get new disk if there is no space
+if there is space you can request either AWS team if that AWS instance OR you can request VMWare team if that is VMware instance..
+
+
+
+ HDD(IDE method) = Integrated Device electronics (16 partitions) /dev/hda
+
+ scsi = small computer system interface (64 Partitions)   /dev/sda  
+		scsi disk or sata disk
+
+		/dev/sda
+			a is first disk
+			b is second disk
+		/dev/sdb
+		/dev/sdc
+		/dev/sdd1 (1 partition)
+		/dev/sdd2 (2nd partition)
+		/dev/sdd3 (3rd partition)
+		/dev/sdd4 (4th partition)
+
+                /dev/sdd64
+-------------------------------------------
+
+Primary partition: ==> we can create 4 primary partition per disk
+LVM ==> we can create around 65535 partitions 
+
+
+
+500 GB disk ==> 100GB P, 100GB P, 100GB P, 100GB E
+
+				P P P E
+					  E==> in this one extended partition we can create multiple LVM partitions
+
+ 100GB Primary ==> it is almost full ==> you need to extend the partition but it is not possible in the Primary partition 
+  if you still want to extend ==> you need to copy the existing data into another partition ==> and delete the partition ==>and create new partition again with 200GB ==> copy the data which you already took as a backup..
+
+      
+
+LVM ==> Logical Volume Management
+
+	1 ==>	500GB   ==> PV
+	2 ===> 1000GB   ==> PV
+    3 ==> 700GB   ==> PV
+   4 ==> 500GB   ==>PV
+one disk ==> Volume Group ==> 500GB + 1000GB + 700GB = 2200 GB + 500GB = 2700GB
+
+       500GB LVM ==> 500GB + 200GB ==> 700GB +1500GB = 2200GB ==> 2200GB + 500GB = 2700GB
+ 
+PV + PV + PV ==> VG ==> LV(partition)
+
+LVM ==> we can extend without downtime...
+
+
+
+primary partition are bootable ==> that is the reason we made /boot as primary partition
+LVM paritions are not bootable ==> / is LVM partition
+-------------------
+LVM
+pvcreate
+vgcreate
+lvcreate
+
+vgextend
+lvextend
+
+pvs
+vgs
+lvs
+
+pvdisplay
+vgdisplay
+lvdisplay
+
+----------------------
+
+step1: get the new disk by requesting our vmware team
+step2: once you get the disk you need to run the echo command to scan the disk
+	echo "- - -" >>/sys/class/scsi_host/host0/scan
+	 echo "- - -" >>/sys/class/scsi_host/host1/scan
+	echo "- - -" >>/sys/class/scsi_host/host2/scan
+   - ==>channel
+   - ==>target
+   - ==>LUN
+   host0 ==> HBA card1
+	host1 ==> HBA card2
+	host2 ==> HBA card3
+ step3: run lsblk OR fdisk -l OR lsscsi to see the disk 
+
+
+CREATION OF PRIMARY PARTITION
+------------------------------
+step1: fdisk /dev/sdb ==> to create a primary parition from the sdb disk
+	m for help ==> press m ==> press n ==> press P for primary partitin ==> provide 1 for first partition ==> provide first sector information 2048 as default ==> and provide size for that disk +5G ==> it will create a partition ==> press w to write to disk and exit..
+
+  a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+step2: Now, creation of the partitions is done... run "lsblk" to see the disk ==> you need to update to kernel for that run "partprobe /dev/sdb"
+
+step3: we need to convert the partition into a file system 
+	mkfs.xfs /dev/sdb1
+	mkfs.xfs /dev/sdb2
+
+		file system types:
+			xfs   ==> RHEL 7
+			ext4  ==> RHEL 6
+			ext3  ==> RHEL 5
+			ext2  
+
+
+step4: create a directory to mount the partition
+		and do mount
+		
+		mount source destination   ==>TEmporary mounting==> if you restart the system the mount point will go away again you need mount
+
+EX: mount /dev/sdb2 /veeranjanelulu/
+
+ 			OR
+		you can also add an entry in the /etc/fstab file  ==> Permanent mounting ==> even if you restart the system the file system still be there
+
+/etc/fstab fields:
+------------------
+
+Devicename	Mountpoint	Filesystem-type	Permissions	 Backup-partition	Filesystem-checkup-during-bootup
+1		         2		     3		         4		         5			            6	
+
+
+backup 0 = No meta data backup
+       1 = Backup meta data
+for OS partitions we can recommend 1.
+
+/     = OS
+/boot = OS
+/test = other partition
+/oradata = Other partitions
+file system checkup
+  	0 No file system checkup during boot up.  no repair on file system during server coming up.
+	1 : serial file system checkup and first priority file systems.
+	2 : parlel or second priority
+
+-----------------------------------------------------------
+
+
+
+primary partition are bootable ==> that is the reason we made /boot as primary partition
+LVM paritions are not bootable ==> / is LVM partition
+
+
+what is minimum paritions required to start up the system ?
+	/boot
+can we extend root file system (/)?
+	Yes, we can extend because that is LVM partition
+
+xfs ==> we can onlly extend the file system
+ext4 ==> we can extend and even we can reduce
+
+-----------------------------------------------------------------
+LVM
+pvcreate
+vgcreate
+lvcreate
+
+vgextend
+lvextend
+
+pvs
+vgs
+lvs
+
+pvdisplay
+vgdisplay
+lvdisplay
+
+pvremove
+vgremove
+lvremove
+
+=============NEW LVM partition creation steps & mount it to a file system===================
+
+step1: GET the disk from the VMware team.. and scan the disk using ==>
+	echo "- - -" >>/sys/class/scsi_host/host0/scan
+	 echo "- - -" >>/sys/class/scsi_host/host1/scan
+	echo "- - -" >>/sys/class/scsi_host/host2/scan
+step2: create PV using ==> pvcreate /dev/sdd
+step3: create VG using ==> vgcreate vgname /dev/sdd
+step4: create LV using ==> lvcreate -L +5G -n lvname vgname
+										OR
+							lvcreate -l +50%FREE lvname vgname
+step5: We need to convert into a file system using==> mkfs.xfs /dev/vgname/lvname
+step6: you can mount to a file system using mount command as temporary mounting OR you can also add an entry in the /etc/fstab to do a permanent mounting..
+step7: once you add an entry in the /etc/fstab you need to refresh using "mount -a" command AND to see all mount points you need run just "mount" command..
+
+
+=========== Steps to create LV parition if there is space available in the VG =============
+step1: first we need to verify whether space is available in the VG or not			
+		vgs 
+step2: if space is available, we can directly create LV parition 
+ lvcreate -L +5G -n lvname vgname
+				OR
+ lvcreate -l +50%FREE lvname vgname
+step3: convert into a file system using ==> mkfs.xfs /dev/vgname/lvname
+step4: mount it to a file system in /etc/fstab and then validate using "mount -a" command and run mount to see all mount points
+
+
+========== Steps to extend the LV partition if there is space avialbe in the VG ============
+step1: if you want to extend the LV partition, first you need to check whether space is available in the VG or not from which VG the LV is created..
+
+To verify this, you need to run ==> "lvs" command
+
+step2: now, we need to know whether space is available in the VG or not using ==> "vgs" command
+step3: space is available, now you need extend the LV
+	lvextend -L +5G lvpath ====> lvextend -L +5G /dev/vgname/lvname
+                                   xfs_growfs /dev/vgname/lvname
+										OR
+							lvextend -L +5G /dev/vgname/lvname -r   ==> here -r extend the file system ,we no need to run the xfs_growfs command =
+
+step4: lsblk or fdisk -l or df -hT
+
+===========Steps to extend the LV partition if there is no space avialbe in VG================
+
+step1: if you want to extend the LV partition, first you need to check whether space is available in the VG or not from which VG the LV is created..
+
+To verify this, you need to run ==> "lvs" command
+
+step2: now, we need to know whether space is available in the VG or not using ==> "vgs" command
+step3: if space is not available, we need to extend the VG first using vgextend command by getting the new disk for that following are the steps:
+	1. get the new disk from VMware team by putting the jestification..
+	2. you need to run the echo command to scan the disk 
+			echo "- - -" >>/sys/class/scsi_host/host0/scan
+	 	echo "- - -" >>/sys/class/scsi_host/host1/scan
+		echo "- - -" >>/sys/class/scsi_host/host2/scan
+	3. you need to create pv ==> pvcreate /dev/sde
+	4. we need to extend the VG ==> vgextend vgname /dev/sde
+step4: now you can extend LV using ==> lvextend -L +5G /dev/vgname/lvname
+                                   xfs_growfs /dev/vgname/lvname
+										OR
+							lvextend -L +5G /dev/vgname/lvname -r   ==> here -r extend the file system ,we no need to run the xfs_growfs command
+
+----------------------------------------------------
+
+
+
+
+
+
+
+  	there are 2 types of partitions
+	1. Primary partition 
+	2. Logical partition
+
+primary supports to store bootable files.Like opearting system realated files
+logical is for store general data.
+*  in each scsi disk we can create max 4 primary partitions.
+	/boot is a primary partition
+	/, /var and any other partitions are logical partitions
+
+how to scan for new disk
+  echo " - - - " >> /sys/class/scsi_host/host0/scan
+  echo " - - - " >> /sys/class/scsi_host/host1/scan
+  echo " - - - " >> /sys/class/scsi_host/host2/scan
+
+Create partition using normal method.
+step 1: Create the partition ( enter inside disk and create partition) fdisk /dev/sdb  n ==> p ==> partition number 1 ==> starting sector default just enter ==> ending sectory +2G and enter
+	p : print the partition table information
+	n : create new partition
+	d : delete partition
+	m : help
+	t : change partition system id ( 83 linux, 82 swap , 8e lvm)
+
+
+			/dev/sdb
+			/dv/sdb1    p
+			/dev/sdb2   extended
+			/dev/sdb3   logical
+			/dev/sdb4   logical
+			/dev/sdb5   logical
+
+step 2:  update disk changes to kernel using partprobe command : partprobe /dev/sdb
+step 3:  keep partition in any of the file system type (ext2,ext3,ext4,xfs)   mkfs.xfs /dev/sdb1
+										mkfs.ext4 /dev/sdb2
+		ext2 : RHEL 4
+		ext3 : RHEL 5
+		ext4 : RHEL 6
+		xfs  : RHEL 7 & 8
+
+* explain difference between ext4 and xfs 
+* what is journaling?
+	journaling is nothing but data about data is nothing but meta data. 
+
+		journaling will mantain data about data like how many sectors are allocated for one file and sectors 
+			numbers will be written in meta data.
+
+    benifit: faster repair/recovery in case file system corrupted.
+
+
+step 4:Create one directory and mount the partition to that directory . mkdir /data  mount /dev/sdb1 /data
+step 5: add new file system details in /etc/fstab file to make permanent mount.
+
+   there are 7 Fields in /etc/fstab
+
+
+/dev/sdb1     /data      xfs    defaults  0  1
+/dev/sdc1     /test      xfs    defaults,noauto  0  2
+/dev/sdc5     /oracle      xfs    defaults,noauto  0  2
+
+
+
+Devicename	Mountpoint	Filesystem-type	Permissions	Backup-partition	Filesystem-checkup-during-bootup
+1		         2		     3		         4		         5			            6	
+
+
+backup 0 = No meta data backup
+       1 = Backup meta data
+for OS partitions we can recommend 1.
+
+/     = OS
+/boot = OS
+/test = other partition
+/oradata = Other partitions
+file system checkup
+  	0 No file system checkup during boot up.  no repair on file system during server coming up.
+	1 : serial file system checkup and first priority file systems.
+	2 : parlel or second priority
+
+
+* explain about fstab fields
+  6 fields
+  
+=======
+storage team work for lun creation and map to server.
+		
+	Task 1 : create lun in group
+	task 2 : format that lun, they will get one Logical number as soon as they format the lun.
+	task 3 : login to san switches and map lun to respective HBA card with help of wwn.
+
+server is for what purpose? 
+	to run the application,to store data, to process data, to provide interactive application to end user.
+	
+	requirements : create new partition or partitions
+			extend the partition space.
+
+Scenario 1:  How to get disk for physical server?
+ 
+   		partititions : 1. /appd01 100 GB
+			       2. /appd02 100 GB
+			       3. /oradata 1 TB
+			       4./oralogs  1 TB
+
+
+OS administrator got the ticket with above requirements.
+
+Task 1 : OS team will ack ticket and mention comment like.  working on request and update you once partitions are ready.
+
+
+Task 2 : OS team will open new Service request ( SR ) with Storage team.
+  In ticket we have to mention below details.
+
+	details we will fill in storage request form.
+		1. Server name
+		2. DC name
+		3. WWN of all HBA cards
+		4. required size
+		5. type ( Perm/temp) 
+		6. justification or comment
+
+
+Task 3 : attach this storage request form to ticket which we opened with storage team.
+
+Storage team
+Task 4 : Storage team will create lun and map Lun to HBA cards.
+Task 5 : OS administrator will refresh the channels at OS level using echo command.
+		echo " - - - " >> /sys/class/scsi_host/host0/scan
+		echo " - - - " >> /sys/class/scsi_host/host1/scan
+
+- - - 
+c t l
+	C = channel					host0 is nothing but HBA card 1
+	t = target					host1 means HBA card 2
+	l = Lun id
+we are refreshing channel,target,Lun to get newly attached LUNS for HBA cards.
+
+Task 6 : Now disk will apear at server level, but there will 2 disks 
+	how we can see newly connected disks
+		lsblk
+		or
+		tail -100 /var/log/dmesg
+		or
+		cd /dev/ 
+		ls -ltr
+
+storage team created 1 lun with 1 TB and mapped this 1 TB lun to 2 HBA cards.
+
+   How many HBA cards we will referesh? 2 HBA cards. Here we will 2 disks with  1 TB. we shouldn't confuse here with 2 TB.
+		if we have 4 HBA cards, then how many disks will appear in OS side
+			4 disks  = 4 * 1 = 4 TB
+			storage side we got only 1 TB but virtually it appears like 4 disks.
+		/dev/sde
+		/dev/sdf   create common name for four disks = /dev/mpath1
+		/dev/sdg
+		/dev/sdh
+
+		/dev/sdi
+		/dev/sdj	common name = /dev/narasimhadisk
+		/dev/sdk
+		/dev/sdl
+
+		fdisk /dev/narasimhadisk
+			n
+			1
+			P
+			starting sec
+			end sec
+			w
+				/dev/narasimhadisk1
+		
+
+
+* what is meaning of 3 - - -?
+	channel
+	target
+	lun
+
+
+ requirement is extend space to one of the lun eg: 50 to that we want to extend 500 GB space
+
+	s1 : open case with storage team with storage request form
+		www numbers, server name, existing disk capacity and Logical number of lun.0
+	s2 : storage administrator will add 500 GB space to existing LUN .
+	s3 : OS administrator will rescan the LUNS.
+		scan echo " - - - " >> /sys/class/scsi_host/host0/scan
+		rescan  echo 1 > /sys/block/sdc/device/rescan
+			echo 1 > /sys/block/sdd/device/rescan
+
+Scenario 2:  How to get disk for virtual machine?
+		virtualization ( VMWARE)
+		Hypervisor software is esxi . esxi is a bare metal os which we will install on top of Physical box.
+		vcentre is a tool which will helps to access and administrate physical machines.
+
+	step 1 : Linux admin will open case with VMWare team to get disk . administrator has to specify below informaton in ticket
+		Server name  & required disk space
+	step 2 : VMware administrator will acknowledge ticket and start creating disk if space is available in datastore.
+
+		what is data store?
+			data store is spool area where will keep luns. it's like virtual storage area.
+		from data store only we will create disks and attache to server.
+	if suppose no space available in Datastore then vmware administrator will co-ordinate with storage team to get LUN
+	once LuN mapped to PHYSICAL BOX then vmware admin scan for LUNS and format that LUNS and add into datastore.
+
+datastore: 1 TB space is available
+        PM = 20 VM
+	all 20 vm's can use 1 TB space.
+
+  datastore is vmware component:
+
+	10 PM =1 cluster(HA) or virtual data centre.
+
+		datastore
+	
+
+for virtual machines echo for rescan doens't require.
+
+find / -type f -mtime +399 -mtime -401
+
+
+
+					LVM
+
+	Logical Volume Manager
+
+Linux: all linux flav (LVM)
+AIX  : LVM
+HP-ux : LVM
+Solaris : SVM (solaris volume manager)
+	
+ 	LVM volume management( disk management)
+	1. create partition
+	2. extend partition space
+	3. reduce partition space
+	4. snapshot for partition
+
+
+	fdisk /dev/sdb
+
+
+
+pvcreate /dev/sdd
+pvcreate /dev/sd{d,e}
+
+pvs or pvdisplay
+
+
+vgcreate oravg /dev/sdd
+vgcreate appvg /dev/sde
+
+vgs or vgdisplay
+
+lvcreate -L +1G -n lvname vgname
+lvcreate -L +1G -n sai_lv vgsai
+
+lvs
+or
+lvdisplay
+  format the partition(lv) with any of the file system type.
+	mkfs.xfs /dev/oravg/data_lv
+create directory and mount lv to that
+	mkdir /oradata01
+	mount /dev/oravg/data_lv /oradata01
+
+
+basic:
+s1 :enter into disk and create partition
+s2 : update disk/partition information to kernel(partprobe )
+s3 : keep partition in any of file system type (mkfs.xfs /dev/sdb1)
+s4 : create one directory and mount the partition with directory (mount /dev/sdb1 /data)
+
+
+Advantages of LVM:
+1. Easy to extend partition space in Online.
+2. Easy to reduce partition space but with downtime(offline) . unmount the partition and reduce.
+	ext2 can possible to reduce partition space 
+	ext3 can possible
+	ext4 can possible
+	xfs  not possible
+3. Online snapshot for partition can possible.
+4. automatic backup will happen at vg level based on changes on vg.
+	eg: unfortunatly deleted lv
+	   vgcfgbackup and vgcfgrestore we can restore lv which has been deleted unfortunatly.
+5. LV's can supports clusters
+
+max we can create 69932 LV's
+
+basic method:
+          /dev/sdb1  4096   102444
+	  /dev/sdb2  102445   125250
+	  /dev/sdb3  125251   200000
+	200000
+not possible to extend space to /dev/sdb1 and /sdb2 but can possible to extend space to /dev/sdb3 becuase continues sectors are free.
+
+
+   lvm configuration file is : /etc/lvm/lvm.conf   file
+				/etc/lvm/backup    directory
+				/etc/lvm/archive   directory
+	 
+
+	service for lvm is : lvm2-lvmetad.service
+		systemctl restart lvm2-lvmetad.service
+
+------------------------
+CREATING LV and MOUNTING TO A FILE SYSTEM:
+
+* scenario 1: Create LV from scratch.
+	step1 : co-ordinate with storage/vmware team for new disk
+	step2 : scan for new disk once storage team attach the disk
+	step3 : create partition using basic method(fdisk) and keep 8e system id for partition
+	step4 : update to kernel using partprobe command (partprobe /dev/sdf)
+	step5 : convert partition as pv using pvcreate command
+			pvcreate /dev/sdf1
+	step6 : create new vg with pv, using vgcreate command
+			vgcreate vgname pv
+	step7 : create lv with required size, using lvcreate command
+			lvcreate -L 100G -n lvname vgname
+	step8 : keep the lv in any of the file system type. command is mkfs.xfs
+	step9 : create directory and mount lv to that directory.
+			mkdir /oradata
+			mount /dev/vgname/lvname /oradata
+	step10 : add mount point details in /etc/fstab for permanent mount
+----------------------------------
+LVM EXTENDING IF SPACE IS AVAILABLE in VG:
+		extend activity purly online activity.
+* Scenario 2: Extend partition space to existing partition
+
+	
+	Step 1 : [TRUE] If enough space is available in vg then straight away extend partition space using lvextend command.
+		
+			what is the mountpoint name /db1
+			this lv is belongs to which vg? df -h /db1 and verify device name
+		xfs
+			lvextend -L +1G /dev/oravg/lv_db1
+			xfs_growfs /dev/oravg/lv_db1
+				or
+			lvextend -L +1G /dev/oravg/lv_db1 -r
+		ext4/ext3
+	
+			lvextend -L +1G /dev/oravg/lv_db1
+			resize2fs /dev/oravg/lv_db1
+				or
+			lvextend -L +1G /dev/oravg/lv_db1 -r
+
+		extend 100 gb space to /db1 partition.
+		
+        
+EXTENDING LV IF SPACE IS NOT AVAILABLE in VG:
+
+	Step 1 : [FALSE] if enough space is not available in vg then?
+		task 1: if machine is Virtual then we will open request with vmware team to get new disk
+			if machine is physical then we will open request with storage team to get new lun
+			it's a vm and we have access to create disk then we will login to vcentre and attach new disk to
+				vm
+		task 2: Refresh the channels using echo command
+		task 3: create partition with 8e system id and convert that partition as a pv.
+		task 4: add newly created pv into existing vg.
+			vgextend vgname pvpath
+			vgextend oravg /dev/sdk1
+		task 5: now we have enough space in vg so we can extend partition space using lvextend command
+			lvextend -L +100G /dev/oravg/lv_db1 -r
+-------------------------------------------------------
+		
+* Scenario 3: reduce space from existing partition.
+	note: reduce can possible only for ext3 and ext4 file system not possible for xfs.
+	It's a offline activity. downtime is required to reduce space.
+		offline/downtime means unmount the partition
+	step 1	: get approval from partition owner and unmount the partition
+			umount /db1
+		how much space we decided to remove ? 1 GB
+		what is total size of lv? 3 gB
+	step 2	: arrange the sectors properly to one side using e2fsck command
+			e2fsck -f /dev/oravg/lv_db1
+	step 3  : fix the lvsize or resizing lv size how much you want to keep for the lv.
+			resize2fs /dev/oravg/lv_db1 2G
+			scenario the lv size is 1 TB and in that we decided reduce to 400gB
+			resize2fs /dev/oravg/lv_db2 400G
+	step 4	: reduce the partition space from the lv or release space to vg
+			lvreduce -L -1000m /dev/oravg/lv_db1
+			lvreduce -L -623g  /dev/oravg/lv_db2
+		the released space will go to vg.
+	step 5  :  mount back the partition
+			mount -a
+-------------------------------------------------------
+
+
+ext3 
+ext4 ==> we can reduce
+xfs ==>we can not reduce
+
+
+
+mkfs.ext4 lvpath
+------------------------------
+if there are any wrong entries in the /etc/fstab you can validate using "mount -a" command if you don't validate and whenever reboot happens it will goto emergency mode and there we need to enter root user password and correct the things in /etc/fstab and reboot the system again..
+-------------------------------
+
+===============HISTORY OF COMMANDS================
+423  lsblk
+  424  echo "- - -" >>/sys/class/scsi_host/host0/scan 
+  425  echo "- - -" >>/sys/class/scsi_host/host1/scan 
+  426  echo "- - -" >>/sys/class/scsi_host/host2/scan 
+  427  echo "- - -" >>/sys/class/scsi_host/host3/scan 
+  428  lsblk
+  429  clear
+  430  lsblk
+  431  pvcreate /dev/sdd
+  432  vgcreate batch1314VG /dev/sdd
+  433  pvs
+  434  vgs
+  435  lvcreate -L +5G -n ashwini_lv batch1314VG 
+  436  lvs
+  437  pvdisplay 
+  438  vgdisplay 
+  439  lvdisplay 
+  440  lvs
+  441  mkfs.xfs /dev/batch1314VG/ashwini_lv 
+  442  vim /etc/fstab 
+  443  A
+  444  mount -a
+  445  cd /
+  446  ll
+  447  mount -a
+  448  mkdir /ashwini
+  449  mount -a
+  450  vim /etc/fstab 
+  451  mount -a
+  452  mount
+  453  lsblk
+  454  vgs
+  455  lvcreate -l +50%FREE -n raghu_lv batch1314VG
+  456  mkfs.xfs /dev/batch1314VG/raghu_lv 
+  457  vim /etc/fstab 
+  458  mount -a
+  459  mkdir /raghu
+  460  mount -a
+  461  mount 
+  462  lsblk
+  463  df -hT
+  464  lvs
+  465  vgs
+  466  lvextend -L +5G /dev/batch1314VG/ashwini_lv 
+  467  xfs_growfs /dev/batch1314VG/ashwini_lv 
+  468  lsblk
+  469  mount -a
+  470  vgs
+  471  lvs
+  472  vgs
+  473  lvextend -L +1G /dev/batch1314VG/ashwini_lv -r
+  474  clear
+  475  lvs
+  476  vgs
+  477  echo "- - -" >>/sys/class/scsi_host/host0/scan 
+  478  echo "- - -" >>/sys/class/scsi_host/host1/scan 
+  479  echo "- - -" >>/sys/class/scsi_host/host2/scan 
+  480  lsblk
+  481  pvcreate /dev/sde
+  482  vgextend batch1314VG /dev/sde
+  483  pvs
+  484  vgs
+  485  lvextend -l +50%FREE /dev/batch1314VG/ashwini_lv
+  486  xfs_growfs /dev/batch1314VG/ashwini_lv 
+  487  df -h
+  488  vim /etc/fstab 
+  489  jouurnalctl l-xb
+  490  journalctl -xb
+  491  vim /etc/fstab 
+  492  reboot
+  493  vim /etc/fstab 
+  494  reboot
+  495  df -h
+  496  umount /raghu
+  497  mount /ashwini/
+  498  vim /etc/fstab 
+  499  mount -a
+  500  mount
+  501  lsblk
+  502  umount /ashwini/
+  503  umount /sundar/
+  504  umount /sudharshan/
+  505  lsblk
+  506  pvs
+  507  vgs
+  508  lvs
+  509  lvremove ashwini_lv
+  510  lvs
+  511  lvremove /dev/batch1314VG/ashwini_lv 
+  512  lvremove /dev/batch1314VG/raghu_lv 
+  513  lvs
+  514  vgs
+  515  vgremove batch1314VG 
+  516  vgs
+  517  pvs
+  518  pvremove /dev/sdd
+  519  pvremove /dev/sde
+  520  pvs
+  521  lsbk
+  522  lsblk
+  523  fdisk /dev/sdc
+  524  lsblk
+  525  fdisk /dev/sdd
+  526  lsblk
+  527  fdisk /dev/sdb
+  528  lsblk
+  529  reboot
+  530  lsblk
+  531  history
+
+gpasswd -M user2,user3 mygroup1
+
+ usermod -G mygroup user3
+	usermod -G group1,group2,group3 username
+--------------------------------------------------
+
+software ==> collection of programs
+OS ==> collection of software programs
+
+software ==> package ==> libraries, binaries(commands)
+
+install ==> all the configuration files ==> /etc
+			==> all the libraries => either /lib or /lib64
+			==> all the commands or binaries ==>/bin, /sbin, /usr/local/...
+
+rpm packges 
+
+
+============Software management==========
+
+			1. Install    ==> installation/setting up the things
+			2. Uninstall  ==> uninstalling/removing a package or software
+			3. Upgrade    ==> it will upgrade on top of old pakcage, it will it will overwrite with old package, can we downgrade ==> no can not downgrade
+			4. Update     ==> it will update the old package but not overwrite, it means we can downgrade..
+ 			5  Query about package  ==> to check whether thhe package is installed or not..
+
+
+Package management
+the software come as a package. 
+
+REDHAT	1. RPM (redhat package manager)
+	2. YUM (advanced) ==> Yellowdog update modifier
+SUSE    1. RPM
+	2. zypper (Advanced)
+
+	rpm will across all linux flavours
+	yum : redhat,centos,fedora
+
+	rpm  : suse,Redhat,ubuntu,debian,centos
+		rpm -i pkgname
+		rpm -e pkgname
+		rpm -U pkgname
+	i = install
+	e = errase
+	U = upgrade		
+
+	suse : zypper ( zypper install packagename,zypper remove packagename, zypper update packagename )
+	ubuntu/debian = apt or aptitude (apt get packagename, apt install packagename, apt remove packagename)
+	redhat : yum ( yum install pkgname, yum remove pkgname, yum update pkgname, yum upgrade pkgname)
+
+
+---------------------------------------
+if you want to get the rpm packages you need to get it from Redhat... ==> 
+	==> from redhat, satellite server ==> https://redhat.com/,,,,,,,,,,,,,,,,,,,,,,,
+     
+     ==> from ISO file we can packages....
+
+----------------------------------------------
+
+version 8
+
+ ==> 3 bugs found ==> EBF (Emergency Bug Fix)
+
+  => 8.0.0.01 ==>01 ==>EBF
+
+  ==> 5 bugs ==> EBF ==> EBF 02 ==> 8.0.0.02
+.
+.
+..
+
+==> 30 bugs ===> big EBF ==> HF ==> Hot Fix
+
+8.0.01.0 ==>01 ==>HF
+8.0.01.01 ==>01 ==>ebf
+8.0.01.02 ==>01 ==>ebf
+8.0.01.03 ==>01 ==>ebf
+
+
+
+multiple HF ==> Minor release ==> 8.1 ==> 9
+
+
+EBF ==> HF ==> Minor ==> Major
+
+EBF ==> HF ==> Minor ==> Major ==> standard release 
+
+
+8.0.0.0.01
+
+
+
+----------------------------------------------
+
+
+RPM = Redhat package manager
+YUM = yollowdog update modified
+
+cheese-3.28.0-1.el7.x86_64.rpm
+vsftpd-3.0.2-27.el7.x86_64.rpm
+
+
+<Name>-<version>-<update>.<OS version>.<arch>.rpm
+<Name>-<version>-<update>.<arch>.rpm
+
+
+rhel 6 operating system , is the above package will support to install?
+
+login to server
+	os version
+	arch
+
+RHEL4, 5,6,7,8
+
+vm ==> settings ==> cd/DVD  right side make sure selected use ISO image
+
+-------------------------------------------------------
+rpm -qa 
+	==> to see all the installed packages in the system
+
+rpm -qa packageName  ==> to check the specific package is installed or not..
+	q = query
+	a = all
+
+rpm -qa --last 
+	===> all the packages installed with dates
+
+rpm -ivh packagePath
+ 	i = install
+	v = verbose
+	h = hashing progress
+
+rpm -evh packageName
+	e = erase/remove/uninstall	
+	v = verbose
+	h = hashing progress
+
+rpm -ivh Packagename --old p
+
+rpm -Uvh packagePath ==> Update the package
+
+rpm -Uvh --oldpackage pkgname
+ ==> it will downgradde the packgae
+
+rpm -ivh packagePath --force
+	==> to reinstall a package forcefully...
+
+before install
+rpm -qip <obsolute pkgname>.rpm ==> to see the information of a package
+rpm -qdp <obsolute pkgname>.rpm ==> to see the documents of a package
+rpm -qcp <obsolute pkgname>.rpm ==> to see the configuration files
+rpm -qRp <obsolute pkgname>.rpm ==> to see the dependencies/libraries..
+
+after install
+rpm -qi <installed pkgname> ==> information
+rpm -qf <installed pkgname>   ==> to get the package from a file from which it got installed..
+rpm -qd <installed pkgname>==> documents
+rpm -qc <installed pkgname> ==>configuration
+rpm -qa <installed pkgname> => query all
+rpm -qR <installed pkgname> ==>dependencies
+
+
+--------------------------------------------------
+how to search is the package installed or not?
+	rpm -qa vsftpd
+
+-q : query 
+a : all
+
+
+rpm and yum commonly using one db, the Database name is berkly.
+    the database will be there in /var/lib/rpm/
+
+rpm -qa vsftpd
+rpm -ivh pkgname
+
+rpm -qi vsftpd
+
+i : information about installed pkg
+
+rpm -qd vsftpd
+documents about this software(vsftpd)
+/
+the below command is for list recently installed softwares.
+
+rpm -qa --last | more
+
+
+	/boot
+	/root
+	/etc
+	/var
+	/usr/bin
+	/usr/sbin
+	/lib
+	 			
+
+* openssh package we are installing. once we install software or rpm in which directory place will be occupied?
+	configuration files will store in /etc
+	libraries related to that rpm /lib
+	commands related to that rpm /usr/bin or /usr/sbin
+
+
+	
+* How to listout related configuration files of rpm?
+	rpm -qc pkgname
+ 	
+	rpm -qf filename
+the above command will list out the package of filename. 
+	eg: /etc/fstab
+	this file is generated by which rpm/software.
+
+	
+* unfortunatly permissions has been set like 000 for chmod command? how you can rectify this issue?
+
+	chmod 000 /usr
+
+	step 1: we identified which rpm generated this /usr/bin/chmod file
+		rpm -qf /usr/bin/chmod
+			coreutils is the one generated /usr/bin/chmod
+	step 2: I reinstalled coreutils package.it solved the issue
+		rpm -ivh coreutils-***.rpm --force
+		rpm -ivh /media/Packages/coreutils-8.22-21.el7.x86_64.rpm --force
+
+* unfortunatly yum command has been removed.how you can rectify this issue?
+* unfortunatly we have deleted chmod command? how we can resolve this issue?
+step 1: login to other machine & identified which rpm generated this /usr/bin/chmod file
+		rpm -qf /usr/bin/chmod
+		coreutils is the one generated /usr/bin/chmod
+step 2: I reinstalled coreutils package.it solved the issue
+		rpm -ivh coreutils-***.rpm --force
+after install
+rpm -qi <installed pkgname>  information
+rpm -qf <installed pkgname>  
+rpm -qd <installed pkgname>
+rpm -qc <installed pkgname>
+rpm -qa <installed pkgname>
+rpm -qR <installed pkgname>
+
+before install
+rpm -qip <obsolute pkgname>.rpm
+rpm -qfp <obsolute pkgname>.rpm
+rpm -qdp <obsolute pkgname>.rpm
+rpm -qcp <obsolute pkgname>.rpm
+rpm -qap <obsolute pkgname>.rpm
+rpm -qRp <obsolute pkgname>.rpm
+
+* How to identify dependencies of one of the rpm
+rpm -qRp /media/Packages/createrepo-0.9.9-28.el7.noarch.rpm
+
+
+		install
+		remove
+		query
+		update
+		upgrade
+
+rpm -Uvh pkgname 
+to upgrade the pkg.
+rpm -Uvh /root/vsftpd-3.0.2-27.el7.x86_64.rpm
+* downgrade
+rpm -Uvh --oldpackage /media/Packages/vsftpd-3.0.2-22.el7.x86_64.rpm
+ Note : make sure old package is exist in your machine.
+ ll
+593  rpm -qa 
+  594  rpm -qa tree
+  595  rpm -qa abcd
+  596  rpm -qa --last
+  597  rpm -ivh /media/Packages/tree-1.6.0-10.el7.x86_64.rpm 
+  598  rpm -evh tree
+  599  rpm -qa tree
+  600  rpm -evh vsftpd
+  601  rpm -ivh /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  602  cat /var/log/yum.log 
+  603  rpm -qa --last
+  604  rpm -qa --last | reverse
+  605  rpm -qa --last | grep "Saturday"
+  606  rpm -qa --last | tac
+  607  rpm -qip /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  608  rpm -qdp /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  609  rpm -qcp /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  610  rpm -qRp /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  611  rpm -qi vsftpd
+  612  rpm -qd vsftpd 
+  613  rpm -qc vsftpd
+  614  rpm -qR vsftpd 
+  615  rpm -ivh /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm --force
+  616  rpm -ivh /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  617  clear
+  618  rpm -qf /etc/passwd
+  619  rpm -qf /etc/fstab
+  620  rpm -ivh /media/Packages/setup-2.8.71-10.el7.noarch.rpm --force
+  621  v
+  622  which ls
+  623  which fstab
+  624  which useradd
+  625  whereis useradd
+  626  whereis ls
+  627  which java
+  628  which ls
+  629  rpm -qf /usr/bin/ls
+  630  rm -rf /usr/bin/ls
+  631  ls
+  632  ll
+  633  rpm -qf /usr/bin/ls
+  634  rpm -ivh /media/Packages/coreutils-8.22-23.el7.x86_64.rpm
+  635  rpm -ivh /media/Packages/coreutils-8.22-23.el7.x86_64.rpm  --force
+  636  ls
+  637  ll
+  638  which ls
+  639  ls
+  640  rpm -qd coreutils
+  641  ll
+  642  gunzip /usr/share/man/man1/tail.1.gz
+  643  ll
+  644  cd /usr/share/man/man1/
+  645  ll
+  646  ls -lrtha
+  647  ll | grep "tail"
+  648  gunzip tailf.1.gz 
+  649  ll | grep tailf
+  650  ll -lh | grep tailf
+  651  vim tail.1 
+  652   history
+
+
+So far, RPM 
+------------------------
+		yum ==> Yellowdog Update Modifier
+
+yum list installed = rpm -qa
+
+yum list install vsftpd = rpm -qa vsftpd
+
+yum install pkg.rpm  = rpm -ivh pkg.rpm
+
+yum remove pkgname   = rpm -evh pkgname
+yum info pkgname     = rpm -qi pkgname
+yum reinstall pkgname.rpm  = rpm -ivh pkgname.rpm --force
+yum upgrade pkgname.rpm = rpm -Uvh pkgname
+yum downgrade pkgname.rpm = rpm -Uvh --oldpackage pkgname
+
+
+root or if you have sudo privilages then also normal can install softwares but default only root can install/unistall
+-----------------------------------
+
+yum local server and client
+
+org
+
+satelite server and client
+
+https://redhat.com/..................................
+
+
+  *  How to integrate client machine with satelite server
+	step 1: make sure katello-agent package is installed
+	step 2: register server
+	client: subscription-manager register --username narasimha --password test12345
+           subscription-manager register --org="test" --activationkey="key"
+ * How to check client machine status with satelite server.
+
+		in client machine execute below command to get client status
+
+			subscription-manager status
+		or
+		http://satelitehostname.test.com
+			username:
+			password:
+		Dashboard ==> Hosts ==> content hosts  here you should find your servername with green.
+----------------
+
+* How to enable specified repository if you have satelite server?
+	subscription-manager repos --list
+	subscription-manager --enable=repository id  
+		repository id is nothing but old repository(7.0)
+------------------------
+----------------------------------------
+
+the main difference between rpm and YUM is repository. we can create repository usng YUM.
+
+How to create local repository?
+	step1: Mount the dvd and install pre-requisite packages
+		mount /dev/sr0 /media
+		rpm -ivh /media/Packages/deltarpm
+		rpm -ivh /media/Packages/python-deltarpm
+		rpm -ivh /media/Packages/createrepo
+		rpm -ivh /media/Packages/vsftpd
+	step 2: create local directory to store all packages
+		mkdir /var/ftp/pub/rhel7.5
+	step 3: copy packages from dvd to newly created directory in step 2.
+		cp -rv /media/Packages/* /var/ftp/pub/rhel7.5/
+	step 4: create repository
+		createrepo -v /var/ftp/pub/rhel7.5
+	step 5: configure the local repository
+		cd /etc/yum.repos.d
+		vi local.repo
+		  [rhel75.repo]
+		  name=rhel75.repo
+		  baseurl=file:///var/ftp/pub/rhel7.5
+		  gpgcheck=0
+		  enabled=1
+	step 6:	refresh the repositories
+		yum clean all
+	now repository is read with 7.5 packages.
+how to list out configured repositories
+	yum repolist
+----------------------------------------
+RPM will not check depencies while installing or uninstalling..
+But YUM will check the depencies while installing and uninstalling.. we no need to take care of the dependencies..
+
+---------------------------------------
+SELINUX ==> inside system
+FIREWALL ==> OUTSIDE 
+
+systemctl stop firewalld
+systemctl disable firewalld
+setenforce 0
+systemctl start vsftpd
+systemctl enable vsftpd
+make sure IP address is there in yum repo server
+
+	How to integrate client machine with yum repo server
+
+Step 1:make sure there is network connectivity between client machine to yum repository server
+	ping yumserverip
+	ping 192.168.40.101
+    with the ping command we are able to confirm there is route to destination or target machine.
+
+	server side we have enabled vsftpd service to transffer data or supply data to client machines.
+	 make sure client machine is connecting to yum server through 21 port number.
+		telnet 192.168.40.101 21
+
+	ftp  selected ftp
+	http 80
+	ssh 22
+to comeout from the telnet command
+ctrl + }
+quit
+
+step 2: configure the local repository 
+	cd /etc/yum.repos.d
+		vi local.repo
+		  [rhel75.repo]
+		  name=rhel75.repo
+		  baseurl=ftp://192.168.40.101/pub/rhel7.5
+		  gpgcheck=0
+		  enabled=1
+
+step 3: refresh the repositories
+	yum clean all
+step 4: list out the repositories
+	yum repolist
+
+
+
+       rhel 7.5 == or > your current version
+repository 7.2? there will any use of this repository
+-------------------------------------------------------
+Server History
+-----------------
+
+717  mount /dev/sr0 /media/
+  718  clear
+  719  yum install /media/Packages/zip-3.0-11.el7.x86_64.rpm 
+  720  rpm -evh zip
+  721  rpm -evh file-roller
+  722  yum remove zip
+  723  rpm -evh file-roller-nautilus
+  724  rpm -evh file-roller
+  725  rpm -evh esc
+  726  rpm -evh zip
+  727  yum install /media/Packages/zip-3.0-11.el7.x86_64.rpm 
+  728  yum remove zip
+  729  yum install /media/Packages/zip-3.0-11.el7.x86_64.rpm -y
+  730  yum remove zip -y
+  731  yum install zip*
+  732  yum reinstall -y /media/Packages/zip-3.0-11.el7.x86_64.rpm 
+  733  zip
+  734  yum install -y /media/Packages/zip-3.0-11.el7.x86_64.rpm 
+  735  yum info zip
+  736  yum reinstall -y /media/Packages/zip-3.0-11.el7.x86_64.rpm 
+  737  subscription-manager status
+  738  yum install tree
+  739  cd /etc/yum.repos.d/
+  740  ll
+  741  rm -rf local.repo 
+  742  cd /var/ftp/pub/
+  743  ll
+  744  cd /
+  745  du -sh
+  746  du -sh *
+  747  yum install zip
+  748  clear
+  749  cd /mnt/
+  750  ll
+  751  clear
+  752  cd
+  753  pwd
+  754  clear
+  755  rpm -ivh /media/Packages/deltarpm-3.6-3.el7.x86_64.rpm 
+  756  rpm -ivh /media/Packages/python-deltarpm-3.6-3.el7.x86_64.rpm 
+  757  rpm -ivh /media/Packages/createrepo-0.9.9-28.el7.noarch.rpm 
+  758  rpm -ivh /media/Packages/vsftpd-3.0.2-25.el7.x86_64.rpm 
+  759  clear
+  760  cd /var/ftp/pub/
+  761  ll
+  762  mkdir rhel76
+  763  cd rhel76/
+  764  ll
+  765  pwd 
+  766  cp -rv /media/Packages/* /var/ftp/pub/rhel76/
+  767  createrepo -v /var/ftp/pub/rhel76/
+  768  yum clean all
+  769  yum repolist
+  770  vim /etc/yum.repos.d/rhel76.repo 
+  771  yum repolist
+  772  yum clean all
+  773  yum repolist
+  774  vim /etc/yum.repos.d/
+  775  vim /etc/yum.repos.d/rhel76.repo 
+  776  yum repolist
+  777  yum clean all
+  778  yum repolist
+  779  cd
+  780  pwd
+  781  yum remove zip* -y
+  782  yum install zip*
+  783  systemctl stop firewalld.service 
+  784  systemctl disable firewalld.service 
+  785  setenforce 0
+  786  systemctl start vsftpd
+  787  systemctl status vsftpd
+  788  systemctl enable vsftpd
+  789  clear
+  790  hostnamectl set-hostname batch13
+  791  exit
+  792  cd /etc/yum.repos.d/
+  793  ll
+  794  cat redhat.repo 
+  795  vim rhel76.repo
+  796  cat rhel76.repo 
+  797  ipa
+  798  ip a
+  799  clear
+  800  systemctl status vsftpd
+  801  nestat -nap
+  802  netstat -nap
+  803  netstat -nap | grep vsftpd
+  804  netstat -ntulp
+  805  ipa
+  806  ip a
+  807  netstat -ntulp
+  808  useradd ftpuser
+  809  passwd ftpuser
+  810  ip a
+  811  su - ftpuser
+  812  history
+----------------------
+     4	16:18	touch file{1..3}
+     6	16:18	touch file{1..10}
+     8	16:18	clear
+    10	16:18	rm -rf *
+    11	16:19	touch file1 file2 file3 file4 file5 file6
+    12	16:21	ls
+    13	16:21	ll
+    14	16:25	ls -lh
+    15	16:29	history
+
+-------------------
+client history
+-----------------
+716  hostnamectl set-hostname batch14Client
+  717  exit
+  718  ping 10.42.0.192
+  719  ip a
+  720  ping 10.42.0.192
+  721  telnet        valid_lft forever preferred_lft forever
+  722  telnet batch14 2049
+  723  mount /dev/sr0 /media/
+  724  rpm -ivh /media/Packages/telnet-server-0.17-64.el7.x86_64.rpm 
+  725  rpm -ivh /media/Packages/telnet-0.17-64.el7.x86_64.rpm 
+  726  clear
+  727  telnet batch13 2049
+  728  systemctl stop firewalld.service 
+  729  systemctl disable firewalld.service 
+  730  setenforce 0
+  731  ping batch13
+  732  ping 10.42.0.192
+  733  telnet 10.42.0.192 2049
+  734  telnet 10.42.0.192 21
+  735  vim /etc/yum.repos.d/clientrhel76.repo
+  736  yum clean all
+  737  yum repo list
+  738  yum repolist
+  739  yum install tree
+  740  vim /etc/yum.repos.d/
+  741  cd /etc/yum.repos.d/
+  742  ll
+  743  rm -rf local.repo 
+  744  yum clean all
+  745  yum repolist
+  746  yum install tree
+  747  history
+  748  vim /etc/sysconfig/network-scripts/ifcfg-ens33 
+  749  telnet 10.42.0.192 2049
+  750  telnet 10.42.0.192 6000
+  751  useradd ftpuser
+  752  passwd ftpuser
+  753  yum install ftp* -y
+  754  ftp ftpuser@10.42.0.192
+  755  ping 1042.0.192
+  756  ping 10.42.0.192
+  757  telnet 10.42.0.192
+  758  telnet 10.42.0.192 21
+  759  ftp ftpuser@10.42.0.192
+  760  su - ftpuser
+  761  cd /
+  762  du -sh*
+  763  du -sh *
+  764  zip -r /opt/ftpuser/boot.zip /boot/
+  765  su - ftpuser 
+  766  ftp ftpuser@10,42,0,192
+  767  clear
+  768  history
+------------------
+ 1	16:16	clear
+     2	16:20	cat > myfile
+     3	16:22	cd /
+     4	16:22	du -sh *
+     5	16:24	ll
+     6	16:24	ls
+     7	16:25	ls -lh
+     8	16:25	ftp 10.42.0.192
+     9	16:26	exit
+    10	16:29	history
+    
+-----------------------
+PATCHING PROCEDURE
+-----------------------
+
+patching? ==> just to update the system 
+
+Quarterly or Half yearly 
+
+interllay ==> ticketing tool
+          ==> 40000+ servers ===> 30 people Admin team
+           
+            ==> monitoring tool & Alerting system ==> Nagios
+                            ==> Opsgeine
+                            ==> Opdynamics
+                            ==> Dynatrace
+                            ==> Grafana & Kibana
+                            ==> Solar winds
+------------------
+creation of repository ==> doing the patching activity from that
+
+    7.6 ==> 7.9
+            download 7.9
+            copy all the rpm packages 
+            and create a repository 
+
+----------------------
+* Scenario 1: How to perform patching
+---------------------------------------
+---------------------------------------
+
+	every 6 months redhat will release new kernel with minor changes.
+note: make sure scheduled server is integrated with satelite server.
+
+   process : change co-ordinatator will follow up with client for appoval.
+**************
+step 1 : we have change management team who will get approval from client for patching servers. we will procced further with patching activities once approval in place.
+	step 2 : create snapshot before patching activity.
+	step 3 : collect prechecks from server  (uname -r;uname -a;cat /etc/os-release;df -h;cat /etc/fstab;pvs;vgs;lvs)
+	step 4 : disable alerts for scheduled servers.
+	step 5 : request server owner to stop the application to procced with patching.
+	step 6 : perform sanity reboot before piniatching.
+	step 7 : perform patching if server is up
+			yum update    ==> full patch
+			yum update kernel ==> only kernel update
+            yum update --exclude=kernel*
+                How do I exclude kernel or other packages from getting updated in Red Hat Enterprise Linux while updating system via yum?
+                    https://access.redhat.com/solutions/10185
+			yum update --security  ==> update only security patches
+		how to check are there any security updates
+		yum list-security
+		  or
+		yum --security check-update
+	step 8 : reboot server
+			shutdown -r now
+	step 9 :  we will do post checks and hand over server to owner of the server.
+
+	step 10 : enable the alerts once app team confirms application is working fine.
+
+Roll back:
+	solution 1:  merge the snapshot patching activity.
+	solution 2:  Boot with old kernel   grub2-set-default 2
+	solution 3:  undo the patching activity
+
+		
+		change: main change who is the owner of main change( change co-ordinator)
+			task: 1 Unix team for patching (Unix team)
+			task: 2 application team (application team)
+			task: 3 vmware team to take snapshot if you don't have access to take snapshot ( vmware)
+			task: 4 backup team for backup the full machine (backup team)
+  
+***********************
+
+how to change default kernel?
+  the following command is for list out installed kernels:  
+	awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+Want to set default kernel as 2 or previous one.
+	grub2-set-default 2
+	shutdown -r now
+
+
+how to list out yum related activities?
+	yum history
+how to get information about yum activity?
+	yum history info 3
+how to revert the yum activity?
+	yum history undo 3
+
+
+       roll back
+
+
+step 1 : make sure repository is ready with old packages in yum server. eg: 7.0
+step 2 : client should point out to 7.0 repository.
+step 3 : client should boot with old kernel
+		awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+		grub2-set-default 2
+		shutdown -r now
+step 4 : rename the protect command
+	mv /etc/yum/protected.d/systemd.conf /etc/yum/protected.d/systemd.conf.bkp
+step 5 : revert the patch
+	  yum history undo 2 
+
+
+     physical machine pre-requisites:
+	console credentials
+	make sure we are able to login to console
+	virtual machine:
+	make sure you have vcentre access
+
+	disk info(lsblk)
+	lsblk;df -hP; cat /etc/fstab; uname -a;pvs;vgs;lvs
+
+
+* what is the difference between yum update and yum upgrade?
+	yum update : preserves the old data
+	yum upgrade : it upgrades(over writes) the old data
+	which is default functionality if we execute yum update
+	   the default is update
+yum configuraton file is /etc/yum.conf
+
+* How to install packages from specific repository?
+ 
+	server side: 7.5   192.168.40.101 /var/ftp/pub/rhel7.5
+		     7.0   192.168.40.101 /var/ftp/pub/rhel7.0
+
+	client side: 7.5
+		     7.0
+
+			ping looks fine
+			telnet looks fine
+		vi /etc/yum.repos.d/local.repo
+			[rhel70.repo]
+			name=rhel70.repo
+			baseurl=ftp://192.168.40.101/pub/rhel7.0
+			gpgcheck=0
+			enabled=1
+			[rhel75.repo]
+			name=rhel75.repo
+			baseurl=ftp://192.168.40.101/pub/rhel7.5
+			gpgcheck=0
+			enabled=1
+
+yum --disablerepo="*" --enablerepo="rhel70.repo" install vsftpd
+
+yum install vsftpd
+
+
+
+
+while roll back which one should be enable?
+
+	client side: 7.5
+		     7.0
+
+			ping looks fine
+			telnet looks fine
+		vi /etc/yum.repos.d/local.repo
+			[rhel70.repo]
+			name=rhel70.repo
+			baseurl=ftp://192.168.40.101/pub/rhel7.0
+			gpgcheck=0
+			enabled=1
+			[rhel75.repo]
+			name=rhel75.repo
+			baseurl=ftp://192.168.40.101/pub/rhel7.5
+			gpgcheck=0
+			enabled=0
+	
+
+* How to enable specified repository if you have satelite server?
+	subscription-manager repos --list
+	subscription-manager --enable=repository id  
+		repository id is nothing but old repository(7.0)
+
+How to update new packages in yum repository?
+	eg: 4000
+	along with that i want to add few more
+	cp ah-stepstone-1.11-1.el6.x86_64.rpm /var/ftp/pub/rhel7.5/
+	createrepo --update /var/ftp/pub/rhel7.5/
+
+
+ 
+* what is the difference between rpm and yum?
+
+==> both are inbuilt package management tools for redhat servers.
+==> the difference is repository. the repository can possible through the yum.
+	the advantages of yum is
+		it automatically consider dependancies.
+		easy to perform patching(update from one version to other version)
+
+
+
+install one of the package in 100 servers?
+	step 1 : create file with 100 servers IP
+		vi /tmp/servers
+			192.168.40.10
+			192.168.40.11
+			192.168.40.12
+
+	step 2: for i in `cat /tmp/severs`
+		do
+		ssh $i "yum install pkgname -y"
+		done
+
+actual command:	ssh 192.168.40.10 "yum intall pkgname -y"
+
+RED HAT 7.9 FILE DOWNLOAD
+
+https://developers.redhat.com/content-gateway/file/rhel-server-7.9-x86_64-dvd.iso
+
+
+PERMISSIONS
+------------
+
+
+		1. Normal permissions 
+		2. Special permissions
+
+---------------------------
+normal permissions:
+
+r = read = 4
+w = write = 2
+x = execute = 1
+
+
+rwx r-- r--
+
+U = rwx
+G = r--
+O = r--
+
+user1
+user2
+user3
+=============> LinuxGroup1
+
+user100
+user200
+user300
+=============> LinuxGroup2
+
+
+file1 ==> rwxr--r-- user1 LinuxGroup1
+
+
+chmod <permissions> file/dir
+
++ ==> adding permissions
+- ==> removing permissions
+= ==> assigning permissions
+
+u = user/owner
+g = group
+o = others
+
+
+
+chmod ugo file/dir
+
+r = read = 4
+w = write = 2
+x = execute = 1
+
+chmod 764 file/dir
+
+
+-----------------
+
+ 4	15:21	touch file1 file2
+     6	15:21	mkdir dir123
+     9	15:22	chmod u+x file1
+    11	15:23	chmod g+x,o+w file1
+    13	15:23	chmod o-rw file1
+    15	15:24	chmod u+x,g+x,o-r file2
+    20	15:26	clear
+    21	15:27	chmod 764 file1
+    23	15:28	chmod 444 file1
+    25	15:28	chmod ugo-rwx file1
+    27	15:28	chmod ugo=rwx file1
+    30	15:29	touch file{1..10}
+    32	15:29	touch file1 file2 file3
+    34	15:29	mkdir dir1
+    36	15:29	touch f1 f2 f3
+    39	15:30	cd ..
+    40	15:30	tree
+    42	15:31	chmod -R 777 dir123/
+    44	15:31	cd dir123/
+    46	15:31	cd dir1/
+
+---------------
+
+chown ==> change owner
+chgrp ==> change group
+
+  892  ll
+  893  chown root file1
+  894  ll
+  895  chgrp root file1
+  896  ll
+  897  su - veera 
+  898  pwd
+  899  ll
+  900  chown root:root dir123/
+
+-------------------------------
+
+umask : ==> which is used to define the default permission for directory or a file.. 
+whenever you create a directory you need to substract umask value for 777 
+whenever you create a file you need to substract umask value from 666 
+
+veera= 0002
+root = 0022
+
+
+dir = 777 - umask
+file= 666 - umask
+
+dir ==>veera = 777 - umask = 0777 - 0002 =775
+file =>veera = 666 - umask = 0666 - 0002 =664
+
+normal user created
+	drwxrwxr-x. 2 veera veera 6 Apr 27 15:40 dir123
+	-rw-rw-r--. 1 veera veera 0 Apr 27 15:40 file123
+
+
+dir ==>root = 777 - umask = 0777 - 0022 =755
+file =>root = 666 - umask = 0666 - 0022 =644
+
+root user created
+	drwxr-xr-x. 2 root root 6 Apr 27 15:41 dir123
+	-rw-r--r--. 1 root root 0 Apr 27 15:41 file123
+
+-----------------------
+
+how to change the umask value ==> umask <umask value> ==> umask 0222
+
+dir ==> 777 - 0222 = 555
+file => 666 - 0222 = 444
+
+dr-xr-xr-x.  2 root root    6 Apr 27 15:48 dir100
+-r--r--r--.  1 root root    0 Apr 27 15:48 file100
+
+------------------------
+ACL Permissions:
+
+drwxrwx---.  2 user1    LinuxGroup1    6 Apr 27 15:51 dir123
+
+LinuxGroup1
+ user1(uid=1014)
+ user2(uid=1015)
+ user100(uid=1020)
+----
+user3  ==> he is not part of any Secondary group
+user101
+user102
+user103
+---
+LinuxGroup2
+ user4(uid=1017)
+ user5(uid=1018)
+ user6(uid=1019)
+
+     
+
+      setfacl -R -m u:teja:rwx /HRdata/finance
+
+	mkdir -p /HRdata/finance
+	chmoe 700 /HRdata/finance
+	useradd rahul
+	groupadd hrteam
+	chown -R rahul:hrteam /HRdata/finance
+	useradd sree
+	useradd narasimha
+	gpasswd -M narasimha,sree unix
+how to provide read and execution permissions to unix group.
+	setfacl -R -m g:unix:r-x /HRdata/finance
+how to list out acl permissions
+	getfacl /HRdata/finance
+how to provide full access to raja
+	setfacl -R -m u:raja:rwx /HRdata/finance
+How to exclude permissions to one paticular user?
+	setfacl -R -x u:teja /HRdata/finance
+how to remove all acl permissions?
+	setfacl -b /HRdata/finance
+
+------------------------------------
+sticky bit permission:
+
+	whenever a user copies the file into a sticky permission directory, he will become as owner and group too.. which means he has complete access on that file, and others will have  only read access to it.. this permission not applicable for root user..	
+
+/tmp 
+user1 ==> file1
+user2 ==> file2
+
+777 permissions
+chmod +t dir
+chmod -t dir
+
+chmod 1777 dir
+chmod 0777 dir 
+
+
+----------------
+
+setUID
+setGID
+
+-------------
+
+
+
+Sudoers permissions
+------------------------
+
+Normal: Owner changing and Group changing on file/directory is belongs to Normal permissions
+	  Special : Sticky bit, Setuid and Setgid
+
+
+drwxr-xr-x.   2 root root       6 Aug 18 07:28 oradata
+drwxr-xr-x.   2 root root      19 Aug 18 07:33 test
+
+
+
+rwxrwxrwx
+
+u  g  o
+
+u= user/owner
+g= group
+o=others
+
+
+r = read   w = write  x=execution
+ rwx   r-x  r-x
+ 421   401  401
+  7     5    5
+
+how to change permissions using numbers?            
+	chmod 770 /file22
+
+	chmod 777 /file22
+
+
+
+/batch4/test
+
+here test is subdirectory in batch4 dir
+chmod 770 /batch4
+  the above command will change permissions only to /batch4 not to sub content(inside files/dir)
+
+how we can apply permissions to subcontent inside dir?
+	chmod -R 770 /batch4
+
+	the above command will change permissions to /batch4 dir and subcontent also.
+
+
+	
+  root:
+
+	file 644 by default these permissions applied
+	dir  755 by default permissions applied on 
+
+777
+666
+  		root: created file and directory and got below permissions
+		file 	: 644
+		dir  	: 755
+		
+		others:
+		file	: 664
+		dir     : 775
+
+* what is umask? could you please explain about umask?
+		     
+ umask is a controller in default permissions. 
+	eg: per one user or for all the users if you want to apply default permissions then we can modify the umask number.
+
+root user umask is 	: 022
+other users umask is 	: 002
+
+
+
+			dir 777
+			file 666
+
+				777	666
+	root			022	022
+				---	---
+				755	644
+
+------------------------------------------------------
+
+				777	666	
+				002	002	
+	Others			---	---	
+				775	664
+
+
+     
+
+
+				777	666
+				000	000
+				---	---		
+				777	666
+
+				777	666
+				077	066
+				---	---
+				700	600
+	
+how to get current umask value?
+	umask
+	umask 000
+
+
+
+what is default umask for root and system users : 022
+what is default umask for other users  		: 002
+=====
+chmod is for change permissions on file/directory, this command can be execute by any of the user.
+chown is for change owner ship on file /directory, this command will work only for root user.
+
+    file owner narasimha he can change permissions but not ownership.
+
+chmod is which catogory command bin/sbin? bin
+chown is which catogory command bin/sbin? sbin
+
+
+chown venu /file22
+chown venu:groupname /file22
+chgrp groupname /file22
+
+chown -R venu /dir
+
+it change the ownership from /dir to n number depths inside /dir to venu
+
+/dir/testdir
+
+  testdir owner was narasimha
+
+after executing below command it change the ownership to venu
+	chown -R venu /dir
+
+
+
+* what is inode?
+  the inode is a data structure for file and directory.
+
+    owner,permissions, file creation date and time, sectors, file size in blocks, file access time, links
+
+========
+Special Permissions 
+				1. ACL (access control list)
+				2. Sticky Bit
+				3. Setuid	
+				4. Setgid
+
+
+
+		normal permission
+		chmod and chown
+		
+ls -ld file1
+	-rwxrwxr-x 2 narasimha   narasimha  4096  oct 10 file1
+
+	owner  : narasimha
+	group  : narasimha
+	others : other than narasimha and narasimha group members comes under others category.
+
+	raja ==> secondary group is narasimha
+	sree ==> secondary group is unix
+	venkat ===> secondary group is narasimha
+
+teja for we want to provide full permissions,how we can fullfill this requirement?
+	chmod 777 file1
+		u= owner
+		g= group
+		o=others
+		there is not individual username option
+	we can provide permissions to individual users.
+
+	setfacl -R -m u:teja:rwx /HRdata/finance
+
+	mkdir -p /HRdata/finance
+	chmoe 700 /HRdata/finance
+	useradd rahul
+	groupadd hrteam
+	chown -R rahul:hrteam /HRdata/finance
+	useradd sree
+	useradd narasimha
+	gpasswd -M narasimha,sree unix
+how to provide read and execution permissions to unix group.
+	setfacl -R -m g:unix:r-x /HRdata/finance
+how to list out acl permissions
+	getfacl /HRdata/finance
+how to provide full access to raja
+	setfacl -R -m u:raja:rwx /HRdata/finance
+How to exclude permissions to one paticular user?
+	setfacl -R -x u:teja /HRdata/finance
+how to remove all acl permissions?
+	setfacl -b /HRdata/finance
+
+
+how to grant rwx permissions to ramu and provide r-x permissions to hr group
+	setfacl -R -m u:ramu:rwx,g:hr:r-x /HRdata/finance
+
+
+	2. Sticky bit
+
+	/data
+requirement is every one has to use this /data directory but each other should not delete other users data.
+	narasimha
+	sree
+	raja
+	
+	mkdir /data
+	chmod -R 777 /data
+	chmod +t /data
+	or
+	chmod -R 1777 /data
+how to remove sticky bit
+	chmod -t /data
+	or
+	chmod -R 0777 /data
+
+		0 = no special permissions
+		chmod 0777 /data
+by default on which directory sticky bit applied?
+	/tmp
+
+		1 = sticky bit
+		chmod 1777 /data
+
+drwxr-x--- 2  rahul hrteam  4096  aug 20 /HRdata
+setfacl -R -m u:teja:rwx /HRdata
+
+	getfacl /HRdata
+setfacl -m u:raja:rwx /testfile
+setfacl -R -m u:ramu:r-- /dir
+
+
+==========
+sudo
+
+	root
+		user administration
+		disk management
+		OS installation
+		software management
+		exporting file system through nfs/samba
+		any services configuration
+
+
+oracle team: during installing oracle software in Linux they need administartor access.
+   		we will share root password with them.
+		this policy volution.
+
+   Passwd@12345698
+
+only in that particular machine set simple passswrod and share with oracle team with proper approval.
+      root@123
+
+using sudo we can grant sudper user commands(sbin) access to the normal users.
+
+		vi /etc/sudoers
+		or
+		visudo
+
+root    ALL=(ALL)       ALL
+narasimha  ALL=NOPASSWD:   ALL
+
+username  hostname= effective user   commands
+
+narasimha,sree,raja   testmachine=narasimha  /usr/sbin/useradd, /usr/sbin/usermod
+
+how to list out sudo privilages of normal user?
+	sudo -l
+
+
+root    ALL=(ALL)       ALL
+sree,narasimha  ALL=NOPASSWD:   /usr/sbin/useradd, /usr/sbin/userdel, /usr/sbin/u
+sermod
+oracle ALL=NOPASSWD:   ALL
+narasimha ALL=NOPASSWD: /bin/su - oracle
+sree ALL=NOPASSWD: /bin/su - root
+
+
+how to provide sudo privilages to 100 users?
+  create group and add 100 users into group and provide sudo privilages to group.
+
+
+ %groupname   ALL=(ALL)  /bin/su - oracle
+ %unixgrp     ALL=(ALL)  /bin/su - oracle
+
+what is command alias and user alias?
+
+
+Cmnd_Alias MYADMINCOMMANDS = command1, command2, command3, command4, command5, command6,command7, command8, command9
+Cmnd_Alias APPCOMMANDS = command1, command2, command3, command4, command5, command6,command7, command8
+
+provide above commands set to 3 users
+
+narasimha  ALL=NOPASSWD:  MYADMINCOMMANDS
+sree    ALL=NOPASSWD:  MYADMINCOMMANDS,APPCOMMANDS 
+%unixgrp ALL=NOPASSWD: MYADMINCOMMANDS,APPCOMMANDS
+
+
+User_Alias ADMINS = narasimha, raja, sree, test, venu
+
+ADMINS  ALL=NOPASSWD: MYADMINCOMMANDS,APPCOMMANDS
+==================
+chmod
+chown
+chgrp
+ACL
+stickybit
+setUID
+setGID
+Sudoers
+umask
+------------
+
+Booting procedure & troubleshooting...
+
+start up the system ========================> until login prompt 
+
+  RHEL 4,5,6
+  1. BIOS (BASIC INPUT/OUTPUT system)
+  2. MBR (Master boot recorder)
+  3. GRUB (Grand unified boot loader)
+  4. Kernel
+  5. Init (initilizing particular runlevel)
+  6. Runlevel
+  RHEL 7 & 8
+  1. BIOS
+  2. MBR
+  3. GRUB
+  4. Kernel
+  5. Systemd
+  6. targets
+
+    BIOS (Basic Input & Output System):===> ROM
+  sub task 1: post(power on self test)
+  post is a program which integrated in one of chip. it does health checkup of all the
+  components which are connected to the mother board.
+  sub task 2: cmos(complementory metal oxide semiconductor)
+  cmos will capture and store the critical information before server goes down.
+  the same information will be pass back to main memory while server coming up.
+  critical informaiton : date and time, ram,processor info, startup program.
+ 
+  sub task 3: find OS in devices and pass control to next stage
+  ROM or bios
+  read only memory
+  ram random access memory
+ 
+  dvd
+  USB
+  disk
+  floppy
+  as soon as bios finds the operating system in any of the componenent then bios pass control to MBR.
+
+  if not found operating system in any of the device then stages will not move further. it stops at BIOS stage.
+  error : OS not found
+
+Stage 2 : MBR (Master boot recorder)
+ 
+  MBR is a very small program, it stores in first sector of the operating system device.
+  1 sec = 512 bytes
+  446 bytes = primary boot loader information is nothing but next stage information. what is the next stage information that is grub.
+  64 bytes = partition table information
+  2  bytes = validator program.
+  if grub is in good condition then pass control to grub stage
+  if grub is not in good condition then mbr gives error like grub error.
+
+  stage 3: Grub (grand unfied boot loader)
+  RHEL 5,6  Grub
+  RHEL 7,8  grub2
+
+  grub is a just boot loader to boot default kernel or end user will have choice to boot required kernel.
+  grub is a mediator to choose which kenel has to bootup at this time.
+
+  if not select by default it boots with default kernel which we specified
+  5 kernels
+  end user can choose which kernel has to boot up. end user will have option to select kernel to boot up.
+
+  rhel
+  solari
+  suse
+  window
+  7.0 3
+  yum update
+  7.5 2
+  SuSE default
+  grub2-set-default 3
+  to boot with 7.0 operating system.
+stage 4: kenel
+  task1 : Load the drivers and modules
+  * /boot/initramfs  .   it's a temp / file system. It contains configuration files to load drivers. it's equal to /.
+
+  /boot/initrd
+
+  task2 : Mount the / file system in read only mode
+  * in kernel stage / will be in which mode?
+  read only th mode.
+  * if / is in read only mode then how next /sbin/init or /usr/lib/systemd/systemd programs will execute.
+  read and execution is enough to execute pogram. write permissions doen't required to execute the program.
+  task3 : trigger the following program /sbin/init(rhel5,6) /usr/lib/systemd/systemd(rhel7 & 8).
+  /sbin/init rhel5 & 6.
+  /usr/lib/systemd/systemd rhel 7 & 8.
+  * the feature of systemd is it can load the startup programs parlely.
+  pgr1 pgr2 pgr3
+ 
+  /sbin/init the startup programs will load in sequence order. one by one .
+
+  adv : reduced bootup time.
+
+  * what is the process id of /sbin/init or /usr/lib/systemd/systemd?
+  1 is the process id of /sbin/init
+  1 is the process id of /usr/lib/systemd/systemd
+  * what is the first process of your operating system?
+  /sbin/init if os is rhel 5 & 6
+  /usr/lib/systemd/systemd if os is rhel 7 & 8.
+
+  ps -ef | grep systemd
+
+  systemd
+
+  rhel 6 : init
+  how many runlevels are in rhel 6 ?
+  7 run leves
+ 
+       run level 0 shutdown
+       run level 1 single user mode
+       run level 2 command mode without nfs
+       run level 3 command mode with nfs
+       run level 4 R & D
+       run level 5 GUI( graphical user interface)
+       run level 6 reboot
+
+  init 6 reboot
+  init 0 power off
+  init 1 initilizing runlevel 1. switching one runlevel to other runlevel.
+d
+
+how many runlevels are in rhel 7 ?
+  from rhel 7 onwards they introduced targets. instead of runlevels they given targets.
+target 1:poweroff.target
+target 2:rescue.target ( single user mode) it's for repair os related things.
+target 3:multi-user.target (runlevel 3)
+target 4: graphical.target( runlevel 5)
+target 5: reboot.target (runlevel 6)
+
+
+stage 5: init (/etc/inittab) in line 26 here we will specify default runlevel.
+
+how to get present loaded runlevel
+rhel 6 : runlevel
+who -r
+rhel 7 : systemctl get-default
+runlevel
+who -r
+/etc/inittab 26 line rhel 7 /etc/systemd/system/default.target
+
+
+stage 6 : runlevels/ targets
+
+rc : run controller
+rc 0: runlevel 0
+rc0.d
+rc1.d
+rc2.d
+rc3.d
+rc4.d
+rc5.d
+rc6.d
+s startup program
+k kill program
+s80
+80 starting sequence number while booting up.
+
+
+rhel 7 :  systemctl enable vsftpd   ==> vsftpd service should start in next boot
+rhel 6 :  chkconfig vsftpd on
+ chkconfig --levle 35 vsftpd off
+
+ systemctl is-enabled vsftpd   ==> to get vsftpd service status in next boot
+ systemctl disable vsftpd      ==> disable vsftpd service in next boot.
+
+imediately stop/start services
+systemctl start vsftpd   service vsftpd start
+systemctl stop vsftpd    service vsftpd stop
+systemctl restart vsftpd service vsftpd restart
+systemctl reload vsftpd  service vsftpd reload
+
+login prompt.
+--------------------------------------------------
+===============Troubleshooting====================
+
+---------------Forgot Root Password---------------
+
+1. Restart machine
+2. Press e to go into emergency mode
+3. Goto Line 16 And replace "rhgd quiet" with "rd.break"
+5. "Ctrl+x" to save
+6. mount -o remount,rw /sysroot
+7. chroot /sysroot
+8. passwd
+9. Set New password
+10. touch /.autorelabel
+11. exit
+12. exit
+13. Restart
+
+------------------Grub Error----------------------------------
+
+If grub2 directory missing or if /boot/Grub2/grub.cfg missing, you will get the Grub error
+
+1. cd /dvd - select os and connect
+2. Restart machine
+3. Then open Power on to firmware
+4. set boot priority to CD- ROM drive
+5. then save and exit
+6. select troubleshooting
+7. then select rescue mode
+8. enter 1
+9. chroot /mnt/sysimage/
+10. grub2-install /dev/sda
+11. grub2-mkconfig -o /boot/grub2/grub.cfg
+12. exit
+13. power off
+14. change boot priority to HDD
+15.  exit and save
+
+-----------------------Kernel Panic Error-----------------------------
+1. Cd /boot/
+2. ll
+3. Check the version
+4. Delete initramfs
+5. Init 6 / reboot
+
+
+1. select os and connect
+2. Restart machine
+3. Then open Power on to firmware
+4. set boot priority CD- ROM drive
+5. then save and exit
+6. select troubleshooting
+7. then select rescue mode
+8. enter 1
+9. chroot /mnt/sysimage
+10. mount -o remount,rw /
+11. dracut -f /boot/initfamfs-3.10.0-957.el7.x86_64.img 3.10.0-957.el7x86_64
+12. exit
+13.  power off
+14. change boot priority back to HDD
+15. exit and save
+--------------------------------------------------------------------
+
+
+
+
+Operating System Not Found
+Grub Error
+Kernel Panic Error (initramfs not found)
+forgot root password and how to recover it
+how to take the machine into rescue mode?
+How to take the machine into emergency mode
+what should be the issue if the system is going into emergency mode?
+	enter root password
+	correct the /etc/fstab entries 
+		we can also run journelctl -xe command to get complete error logs to find out the actual cause.
+----------------------------------------------------------------------------
+
+grub2 directory is deleted
+
+grub2-install /dev/sda
+grub-mkconfig -o /boot/grub2/grub.cfg
+
+
+
+-------------------------------------
+
+Shell scripting
+--------------
+date
+cal
+
+
+read   = read
+write  ==>modify
+execute ==> execute
+
+
+once you write the script you need execute permission to execute the script
+
+to do that
+
+chmod +x scriptname
+
+how many ways we can execute the script
+
+	1. just give complete path for the script
+	2. we can just run as ./scriptname but for this you should be in same path where the file is located...
+	3. sh scriptname
+	4. source scriptname
+
+----------------------------------------------------
+
+what is shebang line?
+	#! /bin/bash
+how to comment lines?
+	# commenting the lines
+what happens if you don't set shebang line?
+
+what is the difference between #! and # ........?
+
+
+
+VARIABLES:
+----------
+
+A variable is a named memory location.. it will change the during execution of the program...
+
+HOSTNAME=server.com
+
+HOSTNAME
+--------
+server.com
+--------
+65485
+
+
+
+--------------------
+operators:
+
+Arithmetic Operators ==> + - / * %
+
++ ==> 
+String operators
+logical operators
+conditional operators
+relational or comparision operators
+
+
+#!/bin/bash
+
+number1=10
+number2=20
+
+echo $(($number1+$number2))
+
+USEDMEMORY=`free -m|grep "Mem:"|awk '{print $3}'`
+FREEMEMORY=`free -m|grep "Mem:"|awk '{print $4}'`
+
+echo "the total memeory is: "$(($USEDMEMORY+$FREEMEMORY))
+
+$0
+
+
+how can we get the value of a command?
+	`command`
+
++ ==> add
+- ==> sub
+\* ==> multiplication
+/ ==> quotient
+% ==> remainder
+
+
+2 13 6
+  12
+   1
+
+
+
+Comparision operators
+-------------------------
+> , < >=, <=, ==, !=
+
+-gt
+-lt
+-ge
+-le
+-eq
+-ne
+
+conditional statements
+----------------------
+if [condition]   ==> T
+then
+	statements
+fi
+--------------------
+if [condition]
+then
+	statements
+else
+	statements
+fi
+
+if the condition gets true means, it will execute the if staements 
+if the condition gets false means, it will execute else block statement
+
+
+----------------------------
+
+nested if
+--------
+if [condition]
+then
+	if[condition]
+	then
+		if[condition]
+		then
+		 lsdjfsdajflajdslf ew
+		fi
+	fi
+else
+	statements
+fi
+
+
+--------------
+else if ladder
+
+
+if [condition]
+then
+	stmt
+elif [condition]
+then
+	 stmt
+elif [condition]
+then
+	stmt
+else
+	stmt
+fi
+
+---------------------
+
+
+cat arithmeticOprators.sh ; cat freememorytest.sh ; cat iftest.sh; cat script1.sh ; cat variables.sh 
+#!/bin/bash
+
+number1=10
+number2=20
+
+echo $(($number1+$number2))
+
+USEDMEMORY=`free -m|grep "Mem:"|awk '{print $3}'`
+FREEMEMORY=`free -m|grep "Mem:"|awk '{print $4}'`
+
+echo "the total memeory is: "$(($USEDMEMORY+$FREEMEMORY))
+
+#!/bin/bash
+
+TOTOAL_MEMORY=`free -m |grep "Mem:"|awk '{print $2}'`
+USED_MEMORY=`free -m |grep "Mem:"|awk '{print $3}'`
+
+if [ $(($TOTOAL_MEMORY/2)) -ge $USED_MEMORY ]
+then
+	echo "$USED_MEMORY  is less than 50% of total memory"
+else
+	echo "$USED_MEMORY is greater than 50% of total memeory"
+fi
+
+#! /bin/bash
+
+echo "enter your age:"
+read AGE
+
+if [ $AGE -ge 18 ]
+then	
+	echo "you are eligible for voting"
+else
+	echo "you are NOT eligible for voting"
+fi
+#! /bin/bash
+
+#this is just to display the date
+date
+#this is to get current month
+cal
+cal 1947
+uname -r
+mkdir 1 2 3 4 5
+useradd xyz
+echo $HOSTNAME
+#! /bin/bash
+a=0
+a=$(($a+10))
+a=$(($a+20))
+a=$(($a+30))
+echo $a
+
+echo $HOSTNAME
+
+HOSTNAME=vivekHOST
+echo $HOSTNAME
+HOSTNAME=RaghuHOST
+echo $HOSTNAME
+
+
+a=10
+b=20
+
+env
+  855  cat /etc/profile
+  856  ls -lh
+  857  cd
+  858  ls -ltra
+  859  su - xyz
+  860  vim script1.sh 
+  861  ./script1.sh 
+  862  vim variables.sh
+  863  chmod +x variables.sh 
+  864  cat variables.sh 
+  865  ./variables.sh 
+  866  vim variables.sh 
+  867  ./variables.sh 
+  868  vim variables.sh 
+  869  ./variables.sh 
+  870  vim variables.sh 
+  871  ./variables.sh 
+  872  cat variables.sh 
+  873  vim variables.sh 
+  874  cat variables.sh 
+  875  ./variables.sh 
+  876  env
+  877  env | grep HOSTNAME
+  878  cat variables.sh 
+  879  clear
+  880  vim variables.sh 
+  881  vim arithmeticOprators
+  882  mv arithmeticOprators arithmeticOprators.sh
+  883  vim arithmeticOprators.sh 
+  884  
+  885  top
+  886  free -h
+  887  free -m
+  888  vim arithmeticOprators.sh 
+  889  chmod +x arithmeticOprators.sh 
+  890  ./arithmeticOprators.sh 
+  891  free -m|grep "Mem:"
+  892  free -m|grep "Mem:"|awk '{print $2}'
+  893  vim arithmeticOprators.sh 
+  894  free -m|grep "Mem:"|awk '{print $3}'
+  895  vim arithmeticOprators.sh 
+  896  ./arithmeticOprators.sh 
+  897  cat arithmeticOprators.sh 
+  898  vim arithmeticOprators.sh 
+  899  ./arithmeticOprators.sh 
+  900  vim arithmeticOprators.sh 
+  901  ./arithmeticOprators.sh 
+  902  vim arithmeticOprators.sh 
+  903  ./arithmeticOprators.sh 
+  904  vim iftest.sh
+  905  chmod +x iftest.sh 
+  906  ./iftest.sh 
+  907  free -m
+  908  ./iftest.sh 
+  909  cat iftest.sh 
+  910  free -m 
+  911  free -m |grep "Mem:"
+  912  free -m |grep "Mem:"|awk '{print $2}'
+  913  vim freememorytest.sh
+  914  free -m
+  915  vim freememorytest.sh 
+  916  chmod +x freememorytest.sh 
+  917  ./freememorytest.sh 
+  918  vim freememorytest.sh 
+  919  ./freememorytest.sh 
+  920  vim freememorytest.sh 
+  921  ./freememorytest.sh 
+  922  vim freememorytest.sh 
+  923  ./freememorytest.sh 
+  924  ll
+  925  cat arithmeticOprators.sh ; cat freememorytest.sh ; cat iftest.sh; cat script1.sh ; cat variables.sh 
+  926   history
+  927  clear
+
+|| ==> if [con1 && con2 && con2]
+		then
+			
+
+|| if [con1 || con2 || con2]
+
+
+
+    && ||
+T T T  T
+T F F  T
+F T F  T
+F F F  F
+
+
+
+instead of using && and ||
+
+-o    ==> OR   ==> ||
+-a    ==> AND  ==> &&
+
+
+
+
+---------------------------
+
+loops
+
+for loop 
+----------
+
+
+for VARIABLENAME in LIST
+do
+	statements
+done
+
+
+for NUMBER in 1..10
+do
+	echo $NUMBER
+done
+
+
+
+while
+
+
+do - while
+
+
+
+------------------
+file operators 
+Command arguments
+real time scripts
+case statements
+
+----------------
+
+cat iftest123.sh ; cat studentDetails.sh ; cat forLoop.sh 
+#! /bin/bash
+echo $abcd
+#! /bin/bash
+
+#get 6 subject marks 
+
+echo "enter your hall ticket number:"
+read HALLTICKETNUMBER
+echo "enter your name:"
+read NAME
+echo "enter your 6 subject marks:"
+read TEL
+read HIN
+read ENG
+read MAT
+read SCI
+read SOC
+
+TOTAL_MARKS=$(($TEL+$HIN+$ENG+$MAT+$SCI+$SOC))
+
+AVG_MARKS=$(($TOTAL_MARKS/6))
+
+# || && 
+if [ $TEL -lt 35 -o $HIN -lt 35 -o $ENG -lt 35 -o $MAT -lt 35 -o $SCI -lt 35 -o $SOC -lt 35 ]
+then	
+	echo "FAILED"
+else	
+	echo "PASSED"
+fi
+
+
+if [ $TEL -ge 35 -a $HIN -ge 35 -a $ENG -ge 35 -a $MAT -ge 35 -a $SCI -ge 35 -a $SOC -ge 35 ]
+then	
+	echo "PASS ipoyav po"
+	if [ $AVG_MARKS >=75 ]
+	then
+		echo "DISTINCTION WELL DONE"
+	elif [ $AVG_MARKS < 75 -a $AVG_MARKS >=60 ]
+	then
+		echo "FIRST CLASS try for distinction"
+	elif [ $AVG_MARKS < 60 -a $AVG_MARKS >=50 ]
+	then
+		echo "SECOND CLASS, try to get better marks"
+	else
+		echo "THIRD CLASS, brathikipoyav po"
+	fi
+else	
+	echo "FAILED   malli rasuko"
+fi
+
+# >= 75% ==> DISTINCTION
+# <75 and >=60 ==> first class
+# < 60 and >=50 ==> second classs
+# < 50 and >=35 ==> third class
+
+
+for NUMBER in {1..10}
+do
+if [ $(($NUMBER/2)) -eq 0 ]
+then
+	echo $NUMBER
+fi
+done
+
+	[11:29 AM, 5/2/2022] Sai(Linux): Shell scripting
+--------------
+date
+cal
+
+
+read   = read
+write  ==>modify
+execute ==> execute
+
+
+once you write the script you need execute permission to execute the script
+
+to do that
+
+chmod +x scriptname
+
+how many ways we can execute the script
+
+	1. just give complete path for the script
+	2. we can just run as ./scriptname but for this you should be in same path where the file is located...
+	3. sh scriptname
+	4. source scriptname
+
+----------------------------------------------------
+
+what is shebang line?
+	#! /bin/bash
+how to comment lines?
+	# commenting the lines
+what happens if you don't set shebang line?
+
+what is the difference between #! and # ........?
+
+
+
+VARIABLES:
+----------
+
+A variable is a named memory location.. it will change the during execution …
+[11:29 AM, 5/2/2022] Sai(Linux): Shell scripting
+--------------
+date
+cal
+
+
+read   = read
+write  ==>modify
+execute ==> execute
+
+
+once you write the script you need execute permission to execute the script
+
+to do that
+
+chmod +x scriptname
+
+how many ways we can execute the script
+
+	1. just give complete path for the script
+	2. we can just run as ./scriptname but for this you should be in same path where the file is located...
+	3. sh scriptname
+	4. source scriptname
+
+----------------------------------------------------
+
+what is shebang line?
+	#! /bin/bash
+how to comment lines?
+	# commenting the lines
+what happens if you don't set shebang line?
+
+what is the difference between #! and # ........?
+
+
+
+VARIABLES:
+----------
+
+A variable is a named memory location.. it will change the during execution of the program...
+
+HOSTNAME=server.com
+
+HOSTNAME
+--------
+server.com
+--------
+65485
+
+
+
+--------------------
+operators:
+
+Arithmetic Operators ==> + - / * %
+
++ ==> 
+String operators
+logical operators
+conditional operators
+relational or comparision operators
+
+
+#!/bin/bash
+
+number1=10
+number2=20
+
+echo $(($number1+$number2))
+
+USEDMEMORY=`free -m|grep "Mem:"|awk '{print $3}'`
+FREEMEMORY=`free -m|grep "Mem:"|awk '{print $4}'`
+
+echo "the total memeory is: "$(($USEDMEMORY+$FREEMEMORY))
+
+
+
+
+how can we get the value of a command?
+	`command`
+
++ ==> add
+- ==> sub
+\* ==> multiplication
+/ ==> quotient
+% ==> remainder
+
+
+2 13 6
+  12
+   1
+
+
+
+Comparision operators
+-------------------------
+> , < >=, <=, ==, !=
+
+-gt
+-lt
+-ge
+-le
+-eq
+-ne
+
+conditional statements
+----------------------
+if [condition]   ==> T
+then
+	statements
+fi
+--------------------
+if [condition]
+then
+	statements
+else
+	statements
+fi
+
+if the condition gets true means, it will execute the if staements 
+if the condition gets false means, it will execute else block statement
+
+
+----------------------------
+
+nested if
+--------
+if [condition]
+then
+	if[condition]
+	then
+		if[condition]
+		then
+		 lsdjfsdajflajdslf ew
+		fi
+	fi
+else
+	statements
+fi
+
+
+--------------
+else if ladder
+
+
+if [condition]
+then
+	stmt
+elif [condition]
+then
+	 stmt
+elif [condition]
+then
+	stmt
+else
+	stmt
+fi
+
+---------------------
+
+
+
+
+
+cat arithmeticOprators.sh ; cat freememorytest.sh ; cat iftest.sh; cat script1.sh ; cat variables.sh 
+#!/bin/bash
+
+number1=10
+number2=20
+
+echo $(($number1+$number2))
+
+USEDMEMORY=`free -m|grep "Mem:"|awk '{print $3}'`
+FREEMEMORY=`free -m|grep "Mem:"|awk '{print $4}'`
+
+echo "the total memeory is: "$(($USEDMEMORY+$FREEMEMORY))
+------------------------
+#!/bin/bash
+
+TOTOAL_MEMORY=`free -m |grep "Mem:"|awk '{print $2}'`
+USED_MEMORY=`free -m |grep "Mem:"|awk '{print $3}'`
+
+if [ $(($TOTOAL_MEMORY/2)) -ge $USED_MEMORY ]
+then
+	echo "$USED_MEMORY  is less than 50% of total memory"
+else
+	echo "$USED_MEMORY is greater than 50% of total memeory"
+fi
+-------------------
+#! /bin/bash
+
+echo "enter your age:"
+read AGE
+
+if [ $AGE -ge 18 ]
+then	
+	echo "you are eligible for voting"
+else
+	echo "you are NOT eligible for voting"
+fi
+-----------------------------
+#! /bin/bash
+
+#this is just to display the date
+date
+#this is to get current month
+cal
+cal 1947
+uname -r
+mkdir 1 2 3 4 5
+useradd xyz
+echo $HOSTNAME
+#! /bin/bash
+a=0
+a=$(($a+10))
+a=$(($a+20))
+a=$(($a+30))
+echo $a
+
+echo $HOSTNAME
+
+HOSTNAME=vivekHOST
+echo $HOSTNAME
+HOSTNAME=RaghuHOST
+echo $HOSTNAME
+
+
+a=10
+b=20
+
+------------------------------------
+
+|| ==> if [con1 && con2 && con2]
+		then
+			
+
+|| if [con1 || con2 || con2]
+
+
+
+    && ||
+T T T  T
+T F F  T
+F T F  T
+F F F  F
+
+
+
+instead of using && and ||
+
+-o    ==> OR   ==> ||
+-a    ==> AND  ==> &&
+
+
+
+
+---------------------------
+
+loops
+
+for loop 
+----------
+
+
+for VARIABLENAME in LIST
+do
+	statements
+done
+
+
+for NUMBER in 1..10
+do
+	echo $NUMBER
+done
+
+
+
+while
+
+
+do - while
+
+
+
+------------------
+file operators 
+Command arguments
+real time scripts
+case statements
+
+
+
+
+----------------
+
+cat iftest123.sh ; cat studentDetails.sh ; cat forLoop.sh 
+#! /bin/bash
+echo $abcd
+#! /bin/bash
+
+#get 6 subject marks 
+
+echo "enter your hall ticket number:"
+read HALLTICKETNUMBER
+echo "enter your name:"
+read NAME
+echo "enter your 6 subject marks:"
+read TEL
+read HIN
+read ENG
+read MAT
+read SCI
+read SOC
+
+TOTAL_MARKS=$(($TEL+$HIN+$ENG+$MAT+$SCI+$SOC))
+
+AVG_MARKS=$(($TOTAL_MARKS/6))
+
+# || && 
+if [ $TEL -lt 35 -o $HIN -lt 35 -o $ENG -lt 35 -o $MAT -lt 35 -o $SCI -lt 35 -o $SOC -lt 35 ]
+then	
+	echo "FAILED"
+else	
+	echo "PASSED"
+fi
+
+
+if [ $TEL -ge 35 -a $HIN -ge 35 -a $ENG -ge 35 -a $MAT -ge 35 -a $SCI -ge 35 -a $SOC -ge 35 ]
+then	
+	echo "PASS ipoyav po"
+	if [ $AVG_MARKS >=75 ]
+	then
+		echo "DISTINCTION WELL DONE"
+	elif [ $AVG_MARKS < 75 -a $AVG_MARKS >=60 ]
+	then
+		echo "FIRST CLASS try for distinction"
+	elif [ $AVG_MARKS < 60 -a $AVG_MARKS >=50 ]
+	then
+		echo "SECOND CLASS, try to get better marks"
+	else
+		echo "THIRD CLASS, brathikipoyav po"
+	fi
+else	
+	echo "FAILED   malli rasuko"
+fi
+
+# >= 75% ==> DISTINCTION
+# <75 and >=60 ==> first class
+# < 60 and >=50 ==> second classs
+# < 50 and >=35 ==> third class
+
+
+
+
+
+for NUMBER in {1..10}
+do
+if [ $(($NUMBER/2)) -eq 0 ]
+then
+	echo $NUMBER
+fi
+done
+
+---------------------
+
+command line arguments:
+-----------------------
+
+./script 12 34 
+
+$0, $1, $2
+	
+$0
+
+The filename of the current script.
+
+$n
+
+These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+
+	
+$#
+
+The number of arguments supplied to a script.
+
+	
+$*
+
+All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+
+	
+$@
+
+All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+
+
+$?
+
+The exit status of the last command executed.
+
+	
+$$
+
+The process number of the current shell. For shell scripts, this is the process ID under which they are executing.
+
+	
+$!
+
+The process number of the last background command.
+
+
+=================Installing maria db if not there in system =======================
+
+#! /bin/bash
+m=`rpm -qa mariadb | wc -l`
+if [ $m = 0 ];
+then
+yum install mariadb -y
+echo " successfully mariadb has been installed"
+else
+echo " Already maria DB is installed "
+fi
+
+=============================================================
+10 servers ==> 1 user you need to create in those 10 servers
+
+hostlist
+10.0.0.7
+.
+.
+.
+.
+
+for host in `cat hostlist`
+do
+ssh $host "useradd sai"
+done
+
+------------------------------
+
+[root@server ~]# cat packageinstall.sh package.sh addition.sh userCreationMultipleServers.sh 
+#! /bin/bash
+
+result=`rpm -qa $1 | wc -l`
+
+if [ $result -ne 0 ]
+then	
+	echo "the package is already installed: "$1
+else
+	yum install $1  	
+	if [ $? -ne 0 ]
+	then
+		echo "it is not successful"
+	else
+		echo "it is just installed "$1
+	fi
+fi
+#! /bin/bash
+
+result=`rpm -qa $1 | wc -l`
+
+if [ $result -ne 0 ]
+then	
+	echo "the package is already installed: "$1
+else
+	yum install $1  	
+	if [ $? -ne 0 ]
+	then
+		echo "it is not successful"
+	else
+		echo "it is just installed "$1
+	fi
+fi
+
+#! /bin/bash
+if [ $# -ne 2 ]
+then
+	echo "you fool!!! we are just doing addition of 2 numbers, just enter 2 numbers"
+else
+	echo "addition "$(($1+$2))
+fi
+
+#./cpfiles.sh src des des des des des des
+
+for i in $*
+do
+	echo $i
+done
+
+echo "number of arugument: "$#
+echo "all the arguments "$*
+echo "all the arugment with @ symbol: "$@
+calllll
+echo "last command execution status: "$?
+echo " the process number of current shell: "$$
+kill -9 $$
+echo "the last backgroud command process number: "$!
+
+#! /bin/bash
+function_for_loop()
+{
+for user in `cat /root/userlist`; do useradd $user; done
+}
+
+for host in `cat hostlist`
+do
+
+	ssh $host "scp root@192.168.18.202:/root/userlist /root; function_for_loop()"
+done
+
+
+
+
+
+
+
+
+
